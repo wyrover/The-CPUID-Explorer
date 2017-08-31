@@ -17,17 +17,17 @@ const static ULONGLONG exa  = peta * 1024;
 ****************************************************************************/
 
 CString FormatMagnitude(UINT AddressBits)
-    {
-     CString s;
+{
+    CString s;
+    ULONGLONG AddressMax = ((LONGLONG)1) << AddressBits;
 
-     ULONGLONG AddressMax = ((LONGLONG)1) << AddressBits;
-
-     if(AddressBits == 64)
+    if (AddressBits == 64)
         s.Format(_T("%I64dEB"), ((((ULONGLONG)1) << 63) / exa) * 2);
-     else
+    else
         s = FormatScaled(AddressMax);
-     return s;
-    } // CExtendedCPU8::FormatMagnitude
+
+    return s;
+} // CExtendedCPU8::FormatMagnitude
 
 
 /****************************************************************************
@@ -39,28 +39,23 @@ CString FormatMagnitude(UINT AddressBits)
 ****************************************************************************/
 
 CString FormatScaled(ULONGLONG AddressMax)
-    {
-     CString s;
+{
+    CString s;
 
-     if(AddressMax / exa > 0)
+    if (AddressMax / exa > 0)
         s.Format(_T("%I64d EB"), AddressMax / exa);
-     else
-     if(AddressMax / peta > 0)
+    else if (AddressMax / peta > 0)
         s.Format(_T("%I64d PB"), AddressMax / peta);
-     else
-     if(AddressMax / tera > 0)
+    else if (AddressMax / tera > 0)
         s.Format(_T("%I64d TB"), AddressMax / tera);
-     else
-     if(AddressMax / giga > 0)
+    else if (AddressMax / giga > 0)
         s.Format(_T("%I64d GB"), AddressMax / giga);
-     else
-     if(AddressMax / mega > 0)
+    else if (AddressMax / mega > 0)
         s.Format(_T("%I64d MB"), AddressMax / mega);
-     else
-     if(AddressMax / kilo > 0)
+    else if (AddressMax / kilo > 0)
         s.Format(_T("%I64d KB"), AddressMax / kilo);
-     else
+    else
         s.Format(_T("%I64d B"), AddressMax);
 
-     return s;
-    } // FormatScaled
+    return s;
+} // FormatScaled

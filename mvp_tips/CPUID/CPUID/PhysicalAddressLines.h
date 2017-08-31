@@ -5,15 +5,15 @@
 
 class CPhysicalAddressLines : public CArrow
 {
-        DECLARE_DYNAMIC(CPhysicalAddressLines)
+    DECLARE_DYNAMIC(CPhysicalAddressLines)
 
 public:
-        CPhysicalAddressLines();
-        virtual ~CPhysicalAddressLines();
+    CPhysicalAddressLines();
+    virtual ~CPhysicalAddressLines();
 
 protected:
-        DECLARE_MESSAGE_MAP()
-        void OnPaint();
+    DECLARE_MESSAGE_MAP()
+    void OnPaint();
 };
 
 

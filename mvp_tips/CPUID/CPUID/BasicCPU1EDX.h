@@ -7,20 +7,23 @@
 
 class CBasicCPU1EDX : public CScrollableCaptionsParent
 {
-        DECLARE_DYNCREATE(CBasicCPU1EDX)
+    DECLARE_DYNCREATE(CBasicCPU1EDX)
 
 public:
-    CBasicCPU1EDX() : CScrollableCaptionsParent(0) { ASSERT(FALSE); }
+    CBasicCPU1EDX() : CScrollableCaptionsParent(0)
+    {
+        ASSERT(FALSE);
+    }
     CBasicCPU1EDX(UINT idd);
     virtual ~CBasicCPU1EDX();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_1_EDX };
+    enum { IDD = IDD_CPUID_BASIC_1_EDX };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     virtual BOOL OnInitDialog();
     virtual BOOL OnSetActive();
 protected:

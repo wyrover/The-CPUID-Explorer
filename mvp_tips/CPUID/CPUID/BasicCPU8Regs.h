@@ -6,20 +6,20 @@
 
 class CBasicCPU8Regs : public CLeaves
 {
-        DECLARE_DYNCREATE(CBasicCPU8Regs)
+    DECLARE_DYNCREATE(CBasicCPU8Regs)
 
 public:
-        CBasicCPU8Regs();
-        virtual ~CBasicCPU8Regs();
+    CBasicCPU8Regs();
+    virtual ~CBasicCPU8Regs();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_8 };
+    enum { IDD = IDD_CPUID_BASIC_8 };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

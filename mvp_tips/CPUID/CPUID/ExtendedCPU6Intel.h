@@ -7,20 +7,20 @@
 
 class CExtendedCPU6Intel : public CLeaves
 {
-        DECLARE_DYNCREATE(CExtendedCPU6Intel)
+    DECLARE_DYNCREATE(CExtendedCPU6Intel)
 
 public:
-        CExtendedCPU6Intel();
-        virtual ~CExtendedCPU6Intel();
+    CExtendedCPU6Intel();
+    virtual ~CExtendedCPU6Intel();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_EXTENDED_6 };
+    enum { IDD = IDD_CPUID_EXTENDED_6 };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

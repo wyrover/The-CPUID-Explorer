@@ -7,22 +7,25 @@
 
 class CBasicCPU1EAX : public CLeaves
 {
-        DECLARE_DYNCREATE(CBasicCPU1EAX)
+    DECLARE_DYNCREATE(CBasicCPU1EAX)
 
 public:
-        CBasicCPU1EAX() : CLeaves(0) { ASSERT(FALSE); }
-        CBasicCPU1EAX(UINT idd);
-        virtual ~CBasicCPU1EAX();
+    CBasicCPU1EAX() : CLeaves(0)
+    {
+        ASSERT(FALSE);
+    }
+    CBasicCPU1EAX(UINT idd);
+    virtual ~CBasicCPU1EAX();
 
 // Dialog Data
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnSetActive();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnSetActive();
 public:
-   virtual BOOL OnInitDialog();
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     CBits c_Reserved_31_28;
     CBits x_Reserved_31_28;
     CBits c_ExtendedFamilyID;

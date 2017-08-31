@@ -34,68 +34,69 @@ END_MESSAGE_MAP()
 *       UINT nCtlColor: unused
 * Result: HBRUSH
 *       Background brush
-* Effect: 
+* Effect:
 *       Sets the background brush and transparent mode
 ****************************************************************************/
 
 HBRUSH CBits::CtlColor(CDC* pDC, UINT /*nCtlColor*/)
-    {
-     pDC->SetBkMode(TRANSPARENT);
-
-     return brush;
-    }
+{
+    pDC->SetBkMode(TRANSPARENT);
+    return brush;
+}
 
 /****************************************************************************
 *                              CBits::SetBkColor
 * Inputs:
 *       COLORREF c: Color
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Sets the background color
 ****************************************************************************/
 
 void CBits::SetBkColor(COLORREF c)
-    {
-     if(brush.GetSafeHandle() != NULL)
+{
+    if (brush.GetSafeHandle() != NULL)
         brush.DeleteObject();
-     bkgnd = c;
-     brush.CreateSolidBrush(c);
-     if(m_hWnd != NULL)
+
+    bkgnd = c;
+    brush.CreateSolidBrush(c);
+
+    if (m_hWnd != NULL)
         Invalidate();
-    } // CBits::SetBkColor
+} // CBits::SetBkColor
 
 /****************************************************************************
 *                             CBits::SetTextColor
 * Inputs:
 *       COLORREF c: Color
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Sets the text color
 ****************************************************************************/
 
 void CBits::SetTextColor(COLORREF c)
-    {
-     text = c;
-     if(m_hWnd != NULL)
+{
+    text = c;
+
+    if (m_hWnd != NULL)
         Invalidate();
-    } // CBits::SetTextColor
+} // CBits::SetTextColor
 
 /****************************************************************************
 *                          CBits::PreSubclassWindow
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Captures the bit position (for the flyover help)
 ****************************************************************************/
 
 void CBits::PreSubclassWindow()
-    {
-     GetWindowText(Help);
-
-     CStatic::PreSubclassWindow();
-    }
+{
+    GetWindowText(Help);
+    CStatic::PreSubclassWindow();
+}
 
 /****************************************************************************
 *                         CBits::OnToolTipNotify
@@ -106,7 +107,7 @@ void CBits::PreSubclassWindow()
 * Result: BOOL
 *       TRUE if handled
 *       FALSE if not
-* Effect: 
+* Effect:
 *       Handles tooltip notifications
 * Notes:
 * typedef struct {
@@ -119,7 +120,7 @@ void CBits::PreSubclassWindow()
 *      LPTSTR    lpszText;   // see below
 *      TCHAR     szText[80]; // buffer for tool tip text
 *      HINSTANCE hinst;      // see below
-*      UINT      uflags;     // flag indicating how to interpret the 
+*      UINT      uflags;     // flag indicating how to interpret the
 *                            // idFrom member of the NMHDR structure
 *                            // that is included in the structure
 *     } TOOLTIPTEXT, FAR *LPTOOLTIPTEXT;
@@ -127,36 +128,33 @@ void CBits::PreSubclassWindow()
 ****************************************************************************/
 
 BOOL CBits::OnToolTipNotify(UINT id, NMHDR * pNMHDR, LRESULT * pResult)
-    {
-     // need to handle both ANSI and UNICODE versions of the message
-     TOOLTIPTEXTA* pTTTA = (TOOLTIPTEXTA*)pNMHDR;
-     TOOLTIPTEXTW* pTTTW = (TOOLTIPTEXTW*)pNMHDR;
+{
+    // need to handle both ANSI and UNICODE versions of the message
+    TOOLTIPTEXTA* pTTTA = (TOOLTIPTEXTA*)pNMHDR;
+    TOOLTIPTEXTW* pTTTW = (TOOLTIPTEXTW*)pNMHDR;
+    CString TipText;
+    UINT_PTR nID = pNMHDR->idFrom;
 
-     CString TipText;
+    if (pNMHDR->code == TTN_NEEDTEXTA && (pTTTA->uFlags & TTF_IDISHWND) ||
+        pNMHDR->code == TTN_NEEDTEXTW && (pTTTW->uFlags & TTF_IDISHWND)) {
+        // idFrom is actually the HWND of the tool
+        nID = ::GetDlgCtrlID((HWND)nID);
+    }
 
-     UINT_PTR nID = pNMHDR->idFrom;
-
-     if (pNMHDR->code == TTN_NEEDTEXTA && (pTTTA->uFlags & TTF_IDISHWND) ||
-         pNMHDR->code == TTN_NEEDTEXTW && (pTTTW->uFlags & TTF_IDISHWND))
-        {
-         // idFrom is actually the HWND of the tool
-         nID = ::GetDlgCtrlID((HWND)nID);
-        }
-
-     if (nID != 0) // will be zero on a separator
+    if (nID != 0) // will be zero on a separator
         TipText = _T("<") + Help + _T(">");
 
-     if (pNMHDR->code == TTN_NEEDTEXTA)
-        { /* ANSI tip */
-         CStringA tip(TipText);
-         StringCchCopyA(pTTTA->szText, sizeof(pTTTA->szText), tip);
-        } /* ANSI tip */
-     else
-        { /* Unicode tip */
-         CStringW tip(TipText);
-         StringCchCopyW(pTTTW->szText, sizeof(pTTTW->szText)/sizeof(WCHAR), tip);
-        } /* Unicode tip */
-     *pResult = 0;
-        
-     return FALSE;
-    } // CBits::OnToolTipNotify
+    if (pNMHDR->code == TTN_NEEDTEXTA) {
+        /* ANSI tip */
+        CStringA tip(TipText);
+        StringCchCopyA(pTTTA->szText, sizeof(pTTTA->szText), tip);
+    } /* ANSI tip */
+    else {
+        /* Unicode tip */
+        CStringW tip(TipText);
+        StringCchCopyW(pTTTW->szText, sizeof(pTTTW->szText) / sizeof(WCHAR), tip);
+    } /* Unicode tip */
+
+    *pResult = 0;
+    return FALSE;
+} // CBits::OnToolTipNotify

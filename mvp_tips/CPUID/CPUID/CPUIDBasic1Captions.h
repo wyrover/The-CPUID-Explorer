@@ -5,19 +5,19 @@
 
 class CCPUIDBasic1Captions : public CDialog
 {
-        DECLARE_DYNAMIC(CCPUIDBasic1Captions)
+    DECLARE_DYNAMIC(CCPUIDBasic1Captions)
 
 public:
-        CCPUIDBasic1Captions(CWnd* pParent = NULL);   // standard constructor
-        virtual ~CCPUIDBasic1Captions();
+    CCPUIDBasic1Captions(CWnd* pParent = NULL);   // standard constructor
+    virtual ~CCPUIDBasic1Captions();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_1_EDX_CAPTIONS };
+    enum { IDD = IDD_CPUID_BASIC_1_EDX_CAPTIONS };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     DECLARE_MESSAGE_MAP()
 };

@@ -6,22 +6,22 @@
 
 /****************************************************************************
 *                              CPUType::CPUType
-* Effect: 
+* Effect:
 *       Constructor
 ****************************************************************************/
 
 CPUType::CPUType()
-    {
-     CPUregs regs;
-     CurrentProcessor.GetCPUID(0, &regs);
-     // "Genu ineI ntel"
-     // "Auth enti cAMD"
-     //  EAX  EDX  ECX
-     if(regs.ECX == 'letn')
+{
+    CPUregs regs;
+    CurrentProcessor.GetCPUID(0, &regs);
+
+    // "Genu ineI ntel"
+    // "Auth enti cAMD"
+    //  EAX  EDX  ECX
+    if (regs.ECX == 'letn')
         type = Intel;
-     else
-     if(regs.ECX == 'DMAc')
+    else if (regs.ECX == 'DMAc')
         type = AMD;
-     else
+    else
         type = Unknown;
-    } // CPUType::CPUType
+} // CPUType::CPUType

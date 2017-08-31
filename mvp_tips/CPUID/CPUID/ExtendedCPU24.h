@@ -6,21 +6,21 @@
 
 class CExtendedCPU24 : public CLeaves
 {
-        DECLARE_DYNCREATE(CExtendedCPU24)
+    DECLARE_DYNCREATE(CExtendedCPU24)
 
 public:
-        CExtendedCPU24();
-        virtual ~CExtendedCPU24();
+    CExtendedCPU24();
+    virtual ~CExtendedCPU24();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_EXTENDED_2_4 };
+    enum { IDD = IDD_CPUID_EXTENDED_2_4 };
 
 protected:
-        void Nullify(CString & s);
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
+    void Nullify(CString & s);
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

@@ -6,20 +6,20 @@
 
 class CExtendedCPU5EAXAMD : public CExtendedCPU5AMD
 {
-        DECLARE_DYNCREATE(CExtendedCPU5EAXAMD)
+    DECLARE_DYNCREATE(CExtendedCPU5EAXAMD)
 
 public:
-        CExtendedCPU5EAXAMD();
-        virtual ~CExtendedCPU5EAXAMD();
+    CExtendedCPU5EAXAMD();
+    virtual ~CExtendedCPU5EAXAMD();
 
 // Dialog Data
 //        enum { IDD = IDD_CPUID_EXTENDED_5_AMD };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

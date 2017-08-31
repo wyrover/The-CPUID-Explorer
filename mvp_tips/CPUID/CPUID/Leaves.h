@@ -5,19 +5,19 @@
 
 class CLeaves : public CPropertyPage
 {
-        DECLARE_DYNAMIC(CLeaves)
+    DECLARE_DYNAMIC(CLeaves)
 
 public:
-        CLeaves(UINT idd);
-        virtual ~CLeaves();
+    CLeaves(UINT idd);
+    virtual ~CLeaves();
 
 // Dialog Data
 //        enum { IDD = IDD_LEAVES };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 protected:
     void DoAlign(UINT ctlid, UINT textid);
     virtual void SetFixedFont(CWnd & wnd);
@@ -38,7 +38,7 @@ protected:
 *       LPARAM: ignored
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Disables all controls in the page
 ****************************************************************************/
 

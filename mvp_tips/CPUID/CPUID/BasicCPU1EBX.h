@@ -7,19 +7,19 @@
 
 class CBasicCPU1EBX : public CLeaves
 {
-        DECLARE_DYNCREATE(CBasicCPU1EBX)
+    DECLARE_DYNCREATE(CBasicCPU1EBX)
 
 public:
-        CBasicCPU1EBX();
-        virtual ~CBasicCPU1EBX();
+    CBasicCPU1EBX();
+    virtual ~CBasicCPU1EBX();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_1_EBX };
+    enum { IDD = IDD_CPUID_BASIC_1_EBX };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     virtual BOOL OnInitDialog();
 protected:
     CBits x_InitialAPICID;

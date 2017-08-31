@@ -7,22 +7,25 @@
 
 class CExtendedCPU8 : public CLeaves
 {
-        DECLARE_DYNCREATE(CExtendedCPU8)
+    DECLARE_DYNCREATE(CExtendedCPU8)
 
 public:
-        CExtendedCPU8() : CLeaves(0) { ASSERT(FALSE);}
-        CExtendedCPU8(UINT idd);
-        virtual ~CExtendedCPU8();
+    CExtendedCPU8() : CLeaves(0)
+    {
+        ASSERT(FALSE);
+    }
+    CExtendedCPU8(UINT idd);
+    virtual ~CExtendedCPU8();
 
 // Dialog Data
 //        enum { IDD = IDD_CPUID_EXTENDED_8 };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
-        afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar * pScrollBar);
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
+    afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar * pScrollBar);
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

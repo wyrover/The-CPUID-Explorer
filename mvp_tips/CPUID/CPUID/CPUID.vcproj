@@ -1,227 +1,351 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="8.00"
 	Name="CPUID"
 	ProjectGUID="{064F12B1-3197-49FF-9F6B-D24B24CC841F}"
-	Keyword="MFCProj">
+	Keyword="MFCProj"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
-			CharacterSet="2">
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="false"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				TreatWChar_tAsBuiltInType="TRUE"
-				UsePrecompiledHeader="3"
+				TreatWChar_tAsBuiltInType="true"
+				UsePrecompiledHeader="2"
 				BrowseInformation="0"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"/>
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="4"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
-			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="2"
-				GenerateDebugInformation="TRUE"
-				SubSystem="2"
-				TargetMachine="1"/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="FALSE"/>
-			<Tool
-				Name="VCPostBuildEventTool"/>
-			<Tool
-				Name="VCPreBuildEventTool"/>
-			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
+				Name="VCLinkerTool"
+				LinkIncremental="2"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
-			CharacterSet="2">
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
-				MinimalRebuild="FALSE"
-				RuntimeLibrary="2"
-				TreatWChar_tAsBuiltInType="TRUE"
-				UsePrecompiledHeader="3"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="1"
-				GenerateDebugInformation="TRUE"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="FALSE"/>
+				MkTypLibCompatible="false"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCCLCompilerTool"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
+				MinimalRebuild="false"
+				RuntimeLibrary="2"
+				TreatWChar_tAsBuiltInType="true"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
-			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Debug Static|Win32"
 			OutputDirectory="$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="1"
-			CharacterSet="2">
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="false"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				TreatWChar_tAsBuiltInType="TRUE"
-				UsePrecompiledHeader="3"
+				TreatWChar_tAsBuiltInType="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"/>
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="4"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
-			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="2"
-				GenerateDebugInformation="TRUE"
-				SubSystem="2"
-				TargetMachine="1"/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="FALSE"/>
-			<Tool
-				Name="VCPostBuildEventTool"/>
-			<Tool
-				Name="VCPreBuildEventTool"/>
-			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
+				Name="VCLinkerTool"
+				LinkIncremental="2"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release Static|Win32"
 			OutputDirectory="$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="1"
-			CharacterSet="2">
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
-				MinimalRebuild="FALSE"
-				RuntimeLibrary="0"
-				TreatWChar_tAsBuiltInType="TRUE"
-				UsePrecompiledHeader="3"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="1"
-				GenerateDebugInformation="TRUE"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="FALSE"/>
+				MkTypLibCompatible="false"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCCLCompilerTool"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
+				MinimalRebuild="false"
+				RuntimeLibrary="0"
+				TreatWChar_tAsBuiltInType="true"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
-			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"/>
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -230,622 +354,858 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<File
-				RelativePath=".\Arrow.cpp">
+				RelativePath=".\Arrow.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU0.cpp">
+				RelativePath=".\BasicCPU0.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU10Regs.cpp">
+				RelativePath=".\BasicCPU10Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EAX.cpp">
+				RelativePath=".\BasicCPU1EAX.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EAXAMD.cpp">
+				RelativePath=".\BasicCPU1EAXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EAXIntel.cpp">
+				RelativePath=".\BasicCPU1EAXIntel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EBX.cpp">
+				RelativePath=".\BasicCPU1EBX.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1ECX.cpp">
+				RelativePath=".\BasicCPU1ECX.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1ECXAMD.cpp">
+				RelativePath=".\BasicCPU1ECXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1ECXIntel.cpp">
+				RelativePath=".\BasicCPU1ECXIntel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDX.cpp">
+				RelativePath=".\BasicCPU1EDX.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXAMD.cpp">
+				RelativePath=".\BasicCPU1EDXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXCaptions.cpp">
+				RelativePath=".\BasicCPU1EDXCaptions.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXCaptionsAMD.cpp">
+				RelativePath=".\BasicCPU1EDXCaptionsAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXCaptionsIntel.cpp">
+				RelativePath=".\BasicCPU1EDXCaptionsIntel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXIntel.cpp">
+				RelativePath=".\BasicCPU1EDXIntel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU2Regs.cpp">
+				RelativePath=".\BasicCPU2Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU3Regs.cpp">
+				RelativePath=".\BasicCPU3Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_0.cpp">
+				RelativePath=".\BasicCPU4_0.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_0_31.cpp">
+				RelativePath=".\BasicCPU4_0_31.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_1.cpp">
+				RelativePath=".\BasicCPU4_1.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_2.cpp">
+				RelativePath=".\BasicCPU4_2.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_3.cpp">
+				RelativePath=".\BasicCPU4_3.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_4.cpp">
+				RelativePath=".\BasicCPU4_4.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_5.cpp">
+				RelativePath=".\BasicCPU4_5.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_6.cpp">
+				RelativePath=".\BasicCPU4_6.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU5Regs.cpp">
+				RelativePath=".\BasicCPU5Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU6Regs.cpp">
+				RelativePath=".\BasicCPU6Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU7Regs.cpp">
+				RelativePath=".\BasicCPU7Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU8Regs.cpp">
+				RelativePath=".\BasicCPU8Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU9Regs.cpp">
+				RelativePath=".\BasicCPU9Regs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\Bits.cpp">
+				RelativePath=".\Bits.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\Block.cpp">
+				RelativePath=".\Block.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\BlockDiagram.cpp">
+				RelativePath=".\BlockDiagram.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CacheTLBInfo.cpp">
+				RelativePath=".\CacheTLBInfo.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ColorSet.cpp">
+				RelativePath=".\ColorSet.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUCoreRegion.cpp">
+				RelativePath=".\CPUCoreRegion.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUID.cpp">
+				RelativePath=".\CPUID.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUIDDlg.cpp">
+				RelativePath=".\CPUIDDlg.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUIDx86.cpp">
+				RelativePath=".\CPUIDx86.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUType.cpp">
+				RelativePath=".\CPUType.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\CurrentProcessor.cpp">
+				RelativePath=".\CurrentProcessor.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ErrorString.cpp">
+				RelativePath=".\ErrorString.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU0.cpp">
+				RelativePath=".\ExtendedCPU0.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU10AMD.cpp">
+				RelativePath=".\ExtendedCPU10AMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EAXAMD.cpp">
+				RelativePath=".\ExtendedCPU1EAXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EBXAMD.cpp">
+				RelativePath=".\ExtendedCPU1EBXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1ECXAMD.cpp">
+				RelativePath=".\ExtendedCPU1ECXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EDXAMD.cpp">
+				RelativePath=".\ExtendedCPU1EDXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EDXCaptionsAMD.cpp">
+				RelativePath=".\ExtendedCPU1EDXCaptionsAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1Intel.cpp">
+				RelativePath=".\ExtendedCPU1Intel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU2.cpp">
+				RelativePath=".\ExtendedCPU2.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU24.cpp">
+				RelativePath=".\ExtendedCPU24.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU3.cpp">
+				RelativePath=".\ExtendedCPU3.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU4.cpp">
+				RelativePath=".\ExtendedCPU4.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5AMD.cpp">
+				RelativePath=".\ExtendedCPU5AMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5EAXAMD.cpp">
+				RelativePath=".\ExtendedCPU5EAXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5EBXAMD.cpp">
+				RelativePath=".\ExtendedCPU5EBXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5ECXAMD.cpp">
+				RelativePath=".\ExtendedCPU5ECXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5EDXAMD.cpp">
+				RelativePath=".\ExtendedCPU5EDXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5Intel.cpp">
+				RelativePath=".\ExtendedCPU5Intel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6AMD.cpp">
+				RelativePath=".\ExtendedCPU6AMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6EAXAMD.cpp">
+				RelativePath=".\ExtendedCPU6EAXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6EBXAMD.cpp">
+				RelativePath=".\ExtendedCPU6EBXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6ECXAMD.cpp">
+				RelativePath=".\ExtendedCPU6ECXAMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6Intel.cpp">
+				RelativePath=".\ExtendedCPU6Intel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU7AMD.cpp">
+				RelativePath=".\ExtendedCPU7AMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU7Intel.cpp">
+				RelativePath=".\ExtendedCPU7Intel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU8.cpp">
+				RelativePath=".\ExtendedCPU8.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU8AMD.cpp">
+				RelativePath=".\ExtendedCPU8AMD.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU8Intel.cpp">
+				RelativePath=".\ExtendedCPU8Intel.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\FormatBinary.cpp">
+				RelativePath=".\FormatBinary.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\FormatMagnitude.cpp">
+				RelativePath=".\FormatMagnitude.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\FormatWithCommas.cpp">
+				RelativePath=".\FormatWithCommas.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\GetCPUName.cpp">
+				RelativePath=".\GetCPUName.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\InfoDisplay.cpp">
+				RelativePath=".\InfoDisplay.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\Leaves.cpp">
+				RelativePath=".\Leaves.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\LogicalAddressLines.cpp">
+				RelativePath=".\LogicalAddressLines.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\PhysicalAddressLines.cpp">
+				RelativePath=".\PhysicalAddressLines.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ReadSpecs.cpp">
+				RelativePath=".\ReadSpecs.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ScrollableCaptions.cpp">
+				RelativePath=".\ScrollableCaptions.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ScrollableCaptionsParent.cpp">
+				RelativePath=".\ScrollableCaptionsParent.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\stdafx.cpp">
+				RelativePath=".\stdafx.cpp"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"/>
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"/>
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug Static|Win32">
+					Name="Debug Static|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"/>
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release Static|Win32">
+					Name="Release Static|Win32"
+					>
 					<Tool
 						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"/>
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\TabView.cpp">
+				RelativePath=".\TabView.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\ToClip.cpp">
+				RelativePath=".\ToClip.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\WriteSpecs.cpp">
+				RelativePath=".\WriteSpecs.cpp"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 			<File
-				RelativePath=".\Arrow.h">
+				RelativePath=".\Arrow.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Basic2Regs.h">
+				RelativePath=".\Basic2Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU0.h">
+				RelativePath=".\BasicCPU0.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU10Regs.h">
+				RelativePath=".\BasicCPU10Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EAX.h">
+				RelativePath=".\BasicCPU1EAX.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EAXAMD.h">
+				RelativePath=".\BasicCPU1EAXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EAXIntel.h">
+				RelativePath=".\BasicCPU1EAXIntel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EBX.h">
+				RelativePath=".\BasicCPU1EBX.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1ECX.h">
+				RelativePath=".\BasicCPU1ECX.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1ECXAMD.h">
+				RelativePath=".\BasicCPU1ECXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1ECXIntel.h">
+				RelativePath=".\BasicCPU1ECXIntel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDX.h">
+				RelativePath=".\BasicCPU1EDX.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXAMD.h">
+				RelativePath=".\BasicCPU1EDXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXCaptions.h">
+				RelativePath=".\BasicCPU1EDXCaptions.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXCaptionsAMD.h">
+				RelativePath=".\BasicCPU1EDXCaptionsAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXCaptionsIntel.h">
+				RelativePath=".\BasicCPU1EDXCaptionsIntel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU1EDXIntel.h">
+				RelativePath=".\BasicCPU1EDXIntel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU2Regs.h">
+				RelativePath=".\BasicCPU2Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU3Regs.h">
+				RelativePath=".\BasicCPU3Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_0.h">
+				RelativePath=".\BasicCPU4_0.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_0_31.h">
+				RelativePath=".\BasicCPU4_0_31.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_1.h">
+				RelativePath=".\BasicCPU4_1.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_2.h">
+				RelativePath=".\BasicCPU4_2.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_3.h">
+				RelativePath=".\BasicCPU4_3.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_4.h">
+				RelativePath=".\BasicCPU4_4.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_5.h">
+				RelativePath=".\BasicCPU4_5.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU4_6.h">
+				RelativePath=".\BasicCPU4_6.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU5Regs.h">
+				RelativePath=".\BasicCPU5Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU6Regs.h">
+				RelativePath=".\BasicCPU6Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU7Regs.h">
+				RelativePath=".\BasicCPU7Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU8Regs.h">
+				RelativePath=".\BasicCPU8Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BasicCPU9Regs.h">
+				RelativePath=".\BasicCPU9Regs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Bits.h">
+				RelativePath=".\Bits.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Block.h">
+				RelativePath=".\Block.h"
+				>
 			</File>
 			<File
-				RelativePath=".\BlockDiagram.h">
+				RelativePath=".\BlockDiagram.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CacheTLBInfo.h">
+				RelativePath=".\CacheTLBInfo.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Colors.h">
+				RelativePath=".\Colors.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ColorSet.h">
+				RelativePath=".\ColorSet.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUCoreRegion.h">
+				RelativePath=".\CPUCoreRegion.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUID.h">
+				RelativePath=".\CPUID.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUIDBasic1Captions.h">
+				RelativePath=".\CPUIDBasic1Captions.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUIDDlg.h">
+				RelativePath=".\CPUIDDlg.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUIDRegs.h">
+				RelativePath=".\CPUIDRegs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUIDx86.h">
+				RelativePath=".\CPUIDx86.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUType.h">
+				RelativePath=".\CPUType.h"
+				>
 			</File>
 			<File
-				RelativePath=".\CurrentProcessor.h">
+				RelativePath=".\CurrentProcessor.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ErrorString.h">
+				RelativePath=".\ErrorString.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU0.h">
+				RelativePath=".\ExtendedCPU0.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU10AMD.h">
+				RelativePath=".\ExtendedCPU10AMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1AMD.h">
+				RelativePath=".\ExtendedCPU1AMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EAXAMD.h">
+				RelativePath=".\ExtendedCPU1EAXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EBXAMD.h">
+				RelativePath=".\ExtendedCPU1EBXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1ECXAMD.h">
+				RelativePath=".\ExtendedCPU1ECXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EDXAMD.h">
+				RelativePath=".\ExtendedCPU1EDXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1EDXCaptionsAMD.h">
+				RelativePath=".\ExtendedCPU1EDXCaptionsAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU1Intel.h">
+				RelativePath=".\ExtendedCPU1Intel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU2.h">
+				RelativePath=".\ExtendedCPU2.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU24.h">
+				RelativePath=".\ExtendedCPU24.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU3.h">
+				RelativePath=".\ExtendedCPU3.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU4.h">
+				RelativePath=".\ExtendedCPU4.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5.h">
+				RelativePath=".\ExtendedCPU5.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5AMD.h">
+				RelativePath=".\ExtendedCPU5AMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5EAXAMD.h">
+				RelativePath=".\ExtendedCPU5EAXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5EBXAMD.h">
+				RelativePath=".\ExtendedCPU5EBXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5ECXAMD.h">
+				RelativePath=".\ExtendedCPU5ECXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5EDXAMD.h">
+				RelativePath=".\ExtendedCPU5EDXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU5Intel.h">
+				RelativePath=".\ExtendedCPU5Intel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6AMD.h">
+				RelativePath=".\ExtendedCPU6AMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6EAXAMD.h">
+				RelativePath=".\ExtendedCPU6EAXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6EBXAMD.h">
+				RelativePath=".\ExtendedCPU6EBXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6ECXAMD.h">
+				RelativePath=".\ExtendedCPU6ECXAMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU6Intel.h">
+				RelativePath=".\ExtendedCPU6Intel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU7AMD.h">
+				RelativePath=".\ExtendedCPU7AMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU7Intel.h">
+				RelativePath=".\ExtendedCPU7Intel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU8.h">
+				RelativePath=".\ExtendedCPU8.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU8AMD.h">
+				RelativePath=".\ExtendedCPU8AMD.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ExtendedCPU8Intel.h">
+				RelativePath=".\ExtendedCPU8Intel.h"
+				>
 			</File>
 			<File
-				RelativePath=".\FormatBinary.h">
+				RelativePath=".\FormatBinary.h"
+				>
 			</File>
 			<File
-				RelativePath=".\FormatMagnitude.h">
+				RelativePath=".\FormatMagnitude.h"
+				>
 			</File>
 			<File
-				RelativePath=".\FormatWithCommas.h">
+				RelativePath=".\FormatWithCommas.h"
+				>
 			</File>
 			<File
-				RelativePath=".\GetCPUName.h">
+				RelativePath=".\GetCPUName.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Leaves.h">
+				RelativePath=".\Leaves.h"
+				>
 			</File>
 			<File
-				RelativePath=".\LogicalAddressLines.h">
+				RelativePath=".\LogicalAddressLines.h"
+				>
 			</File>
 			<File
-				RelativePath=".\messagesToChildren.h">
+				RelativePath=".\messagesToChildren.h"
+				>
 			</File>
 			<File
-				RelativePath=".\msg.h">
+				RelativePath=".\msg.h"
+				>
 			</File>
 			<File
-				RelativePath=".\PhysicalAddressLines.h">
+				RelativePath=".\PhysicalAddressLines.h"
+				>
 			</File>
 			<File
-				RelativePath=".\QueryCoordinates.h">
+				RelativePath=".\QueryCoordinates.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ReadSpecs.h">
+				RelativePath=".\ReadSpecs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ReportRegs.h">
+				RelativePath=".\ReportRegs.h"
+				>
 			</File>
 			<File
-				RelativePath=".\Resource.h">
+				RelativePath=".\Resource.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ScrollableCaptions.h">
+				RelativePath=".\ScrollableCaptions.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ScrollableCaptionsParent.h">
+				RelativePath=".\ScrollableCaptionsParent.h"
+				>
 			</File>
 			<File
-				RelativePath=".\SetAlign.h">
+				RelativePath=".\SetAlign.h"
+				>
 			</File>
 			<File
-				RelativePath=".\SetColor.h">
+				RelativePath=".\SetColor.h"
+				>
 			</File>
 			<File
-				RelativePath=".\SetWindowBit.h">
+				RelativePath=".\SetWindowBit.h"
+				>
 			</File>
 			<File
-				RelativePath=".\stdafx.h">
+				RelativePath=".\stdafx.h"
+				>
 			</File>
 			<File
-				RelativePath=".\TabView.h">
+				RelativePath=".\TabView.h"
+				>
 			</File>
 			<File
-				RelativePath=".\ToClip.h">
+				RelativePath=".\ToClip.h"
+				>
 			</File>
 			<File
-				RelativePath=".\WriteSpecs.h">
+				RelativePath=".\WriteSpecs.h"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 			<File
-				RelativePath=".\res\Copy.bmp">
+				RelativePath=".\res\Copy.bmp"
+				>
 			</File>
 			<File
-				RelativePath=".\res\CPUID.ico">
+				RelativePath=".\res\CPUID.ico"
+				>
 			</File>
 			<File
-				RelativePath=".\CPUID.rc">
+				RelativePath=".\CPUID.rc"
+				>
 			</File>
 			<File
-				RelativePath=".\res\CPUID.rc2">
+				RelativePath=".\res\CPUID.rc2"
+				>
 			</File>
 			<File
-				RelativePath=".\res\jmn.ico">
+				RelativePath=".\res\jmn.ico"
+				>
 			</File>
 		</Filter>
 		<File
-			RelativePath=".\res\CPUID.manifest">
+			RelativePath=".\res\CPUID.manifest"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug Static|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release Static|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
 		</File>
 		<File
-			RelativePath=".\ReadMe.txt">
+			RelativePath=".\ReadMe.txt"
+			>
 		</File>
 	</Files>
 	<Globals>
 		<Global
 			Name="RESOURCE_FILE"
-			Value="CPUID.rc"/>
+			Value="CPUID.rc"
+		/>
 	</Globals>
 </VisualStudioProject>

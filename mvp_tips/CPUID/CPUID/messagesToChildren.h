@@ -8,7 +8,7 @@
 *       LPARAM: ignored
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Sends a notification to the child window to recompute the code based
 *       on the latest settings
 ****************************************************************************/
@@ -23,7 +23,7 @@
 *       LPARAM: ignored
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Initializes the TabParent field of the superclass
 ****************************************************************************/
 

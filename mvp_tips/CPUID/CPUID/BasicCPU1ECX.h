@@ -6,20 +6,23 @@
 
 class CBasicCPU1ECX : public CLeaves
 {
-        DECLARE_DYNCREATE(CBasicCPU1ECX)
+    DECLARE_DYNCREATE(CBasicCPU1ECX)
 
 public:
-        CBasicCPU1ECX() : CLeaves(0) { ASSERT(FALSE); }
-        CBasicCPU1ECX(UINT idd);
-        virtual ~CBasicCPU1ECX();
+    CBasicCPU1ECX() : CLeaves(0)
+    {
+        ASSERT(FALSE);
+    }
+    CBasicCPU1ECX(UINT idd);
+    virtual ~CBasicCPU1ECX();
 
 // Dialog Data
 //        enum { IDD = IDD_CPUID_BASIC_1_ECX };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     virtual BOOL OnInitDialog();
 protected:
     CBits x_SSE3;

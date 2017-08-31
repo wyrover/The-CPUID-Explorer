@@ -17,7 +17,7 @@
 IMPLEMENT_DYNCREATE(CExtendedCPU1EAXAMD, CBasicCPU1EAXAMD)
 
 CExtendedCPU1EAXAMD::CExtendedCPU1EAXAMD()
-        : CBasicCPU1EAXAMD()
+    : CBasicCPU1EAXAMD()
 {
 }
 
@@ -30,14 +30,14 @@ CExtendedCPU1EAXAMD::~CExtendedCPU1EAXAMD()
 * Inputs:
 *       CDataExchange * pDX:
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Binds controls to variables
 ****************************************************************************/
 
 void CExtendedCPU1EAXAMD::DoDataExchange(CDataExchange* pDX)
 {
- CBasicCPU1EAXAMD::DoDataExchange(pDX);
+    CBasicCPU1EAXAMD::DoDataExchange(pDX);
 }
 
 
@@ -54,27 +54,27 @@ END_MESSAGE_MAP()
 /****************************************************************************
 *                         CExtendedCPU1EAXAMD::OnSetActive
 * Result: BOOL
-*       
-* Effect: 
+*
+* Effect:
 *       Reports the registers
 ****************************************************************************/
 
 BOOL CExtendedCPU1EAXAMD::OnSetActive()
-   {
+{
     return CBasicCPU1EAXAMD::OnSetActive();
-   }
+}
 
 /****************************************************************************
 *                         CExtendedCPU1EAXAMD::OnInitDialog
 * Result: BOOL
 *       TRUE, always
-* Effect: 
+* Effect:
 *       Initializes the dialog
 ****************************************************************************/
 
 BOOL CExtendedCPU1EAXAMD::OnInitDialog()
-   {
+{
     CBasicCPU1EAXAMD::OnInitDialog();
     return TRUE;  // return TRUE unless you set the focus to a control
-                  // EXCEPTION: OCX Property Pages should return FALSE
-   }
+    // EXCEPTION: OCX Property Pages should return FALSE
+}

@@ -5,15 +5,15 @@
 
 class CLogicalAddressLines : public CArrow
 {
-        DECLARE_DYNAMIC(CLogicalAddressLines)
+    DECLARE_DYNAMIC(CLogicalAddressLines)
 
 public:
-        CLogicalAddressLines();
-        virtual ~CLogicalAddressLines();
+    CLogicalAddressLines();
+    virtual ~CLogicalAddressLines();
 
 protected:
-        DECLARE_MESSAGE_MAP()
-        void OnPaint();
+    DECLARE_MESSAGE_MAP()
+    void OnPaint();
 };
 
 

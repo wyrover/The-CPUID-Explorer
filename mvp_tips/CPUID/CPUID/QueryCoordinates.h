@@ -7,7 +7,7 @@
 * Result: (LRESULT)(BOOL)
 *       TRUE if successful
 *       FALSE if error
-* Effect: 
+* Effect:
 *       Sets the CRect to have the screen coordinates of the control in question
 ****************************************************************************/
 

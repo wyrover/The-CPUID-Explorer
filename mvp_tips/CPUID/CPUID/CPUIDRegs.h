@@ -17,7 +17,7 @@
 
 ==================================================================================
   EAX: (Intel)
-  
+
    31    28 27            20 19    16 1514 1312 11     8 7      4 3      0
   +--------+----------------+--------+----+----+--------+--------+--------+
   |########|Extended family |Extmodel|####|type|familyid| model  |stepping|
@@ -45,7 +45,7 @@
        computed family = familyid + extended family;
     else
        computed family = familyid;
-       
+
 ==================================================================================
   EBX:
 
@@ -143,138 +143,138 @@
 *****************************************************************************/
 
 typedef union {
-   struct {                      // low order
-      UINT SteppingID:4;         // 3..0
-      UINT ModelID:4;            // 7..4
-      UINT FamilyID:4;           // 11..8
-      UINT ProcessorType:2;      // 13..12
-      UINT Reserved2:2;          // 15..14
-      UINT ExtendedModel:4;      // 19..16
-      UINT ExtendedFamily:8;     // 27..20
-      UINT Reserved:4;           // 31..28
-   } Intel;                      // high order
+    struct {                      // low order
+        UINT SteppingID: 4;        // 3..0
+        UINT ModelID: 4;           // 7..4
+        UINT FamilyID: 4;          // 11..8
+        UINT ProcessorType: 2;     // 13..12
+        UINT Reserved2: 2;         // 15..14
+        UINT ExtendedModel: 4;     // 19..16
+        UINT ExtendedFamily: 8;    // 27..20
+        UINT Reserved: 4;          // 31..28
+    } Intel;                      // high order
 
-   struct {                      // low order
-      UINT SteppingID:4;         // 3..0
-      UINT ModelID:4;            // 7..4
-      UINT FamilyID:4;           // 11..8
-      UINT Reserved2:4;          // 15..12
-      UINT ExtendedModel:4;      // 19..16
-      UINT ExtendedFamily:8;     // 27..20
-      UINT Reserved:4;           // 31..28
-   } AMD;                        // high order
-   UINT w;
+    struct {                      // low order
+        UINT SteppingID: 4;        // 3..0
+        UINT ModelID: 4;           // 7..4
+        UINT FamilyID: 4;          // 11..8
+        UINT Reserved2: 4;         // 15..12
+        UINT ExtendedModel: 4;     // 19..16
+        UINT ExtendedFamily: 8;    // 27..20
+        UINT Reserved: 4;          // 31..28
+    } AMD;                        // high order
+    UINT w;
 } EAX1b;
 
 //=============================================================================
 typedef union {
-   struct { // low order
-      UINT BrandIndex:8;
-      UINT CLFLUSHLineSize:8;
-      UINT LogicalProcessors:8;
-      UINT InitialAPICID:8;
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT BrandIndex: 8;
+        UINT CLFLUSHLineSize: 8;
+        UINT LogicalProcessors: 8;
+        UINT InitialAPICID: 8;
+    } bits;  // high order
+    UINT w;
 } EBX1b;
 
 //=============================================================================
 typedef union {
-   struct { // low order
-      UINT SSE3:1;                 // 0
-      UINT Reserved1:2;            // 1..2
-      UINT MWAIT:1;                // 3
-      UINT CPL:1;                  // 4
-      UINT VMX:1;                  // 5
-      UINT Reserved2:1;            // 6
-      UINT EST:1;                  // 7
-      UINT TM2:1;                  // 8
-      UINT Reserved3:1;            // 9
-      UINT L1:1;                   // 10
-      UINT Reserved4:1;            // 11
-      UINT Reserved5:1;            // 12
-      UINT CMPXCHG16B:1;           // 13
-      UINT XPTR:1;                 // 14
-      UINT Reserved6:17;           // 15..31
-   } Intel;  // high order
-   struct { // low order
-      UINT SSE3:1;                 // 0
-      UINT Reserved1:3;            // 3..1
-      UINT Reserved2:4;            // 7..4
-      UINT Reserved3:4;            // 11..8
-      UINT Reserved5:1;            // 12
-      UINT CMPXCHG16B:1;           // 13
-      UINT Reserved6:18;           // 14..31
-   } AMD;  // high order
-   UINT w;
+    struct { // low order
+        UINT SSE3: 1;                // 0
+        UINT Reserved1: 2;           // 1..2
+        UINT MWAIT: 1;               // 3
+        UINT CPL: 1;                 // 4
+        UINT VMX: 1;                 // 5
+        UINT Reserved2: 1;           // 6
+        UINT EST: 1;                 // 7
+        UINT TM2: 1;                 // 8
+        UINT Reserved3: 1;           // 9
+        UINT L1: 1;                  // 10
+        UINT Reserved4: 1;           // 11
+        UINT Reserved5: 1;           // 12
+        UINT CMPXCHG16B: 1;          // 13
+        UINT XPTR: 1;                // 14
+        UINT Reserved6: 17;          // 15..31
+    } Intel;  // high order
+    struct { // low order
+        UINT SSE3: 1;                // 0
+        UINT Reserved1: 3;           // 3..1
+        UINT Reserved2: 4;           // 7..4
+        UINT Reserved3: 4;           // 11..8
+        UINT Reserved5: 1;           // 12
+        UINT CMPXCHG16B: 1;          // 13
+        UINT Reserved6: 18;          // 14..31
+    } AMD;  // high order
+    UINT w;
 } ECX1b;
 
 //=============================================================================
 typedef union {
-   struct { // low order
-      UINT FPU:1;                  // 0
-      UINT VME:1;                  // 1
-      UINT DE:1;                   // 2
-      UINT PSE:1;                  // 3
-      UINT MSR:1;                  // 4
-      UINT TSC:1;                  // 5
-      UINT PAE:1;                  // 6
-      UINT MCE:1;                  // 7
-      UINT CX8:1;                  // 8
-      UINT APIC:1;                 // 9
-      UINT Reserved1:1;            // 10
-      UINT SEP:1;                  // 11
-      UINT MTRR:1;                 // 12
-      UINT PGE:1;                  // 13
-      UINT MCA:1;                  // 14
-      UINT CMOV:1;                 // 15
-      UINT PAT:1;                  // 16
-      UINT PSE36:1;                // 17
-      UINT PSN:1;                  // 18
-      UINT CFLSH:1;                // 19
-      UINT Reserved2:1;            // 20
-      UINT DS:1;                   // 21
-      UINT ACPI:1;                 // 22
-      UINT MMX:1;                  // 23
-      UINT FXSR:1;                 // 24
-      UINT SSE:1;                  // 25
-      UINT SSE2:1;                 // 26
-      UINT SS:1;                   // 27
-      UINT HTT:1;                  // 28
-      UINT TM:1;                   // 29
-      UINT Reserved3:1;            // 30
-      UINT PBE:1;                  // 31
-   } Intel;  // high order
-   struct { // low order
-      UINT FPU:1;                  // 0
-      UINT VME:1;                  // 1
-      UINT DE:1;                   // 2
-      UINT PSE:1;                  // 3
-      UINT MSR:1;                  // 4
-      UINT TSC:1;                  // 5
-      UINT PAE:1;                  // 6
-      UINT MCE:1;                  // 7
-      UINT CX8:1;                  // 8
-      UINT APIC:1;                 // 9
-      UINT Reserved1:1;            // 10
-      UINT SEP:1;                  // 11
-      UINT MTRR:1;                 // 12
-      UINT PGE:1;                  // 13
-      UINT MCA:1;                  // 14
-      UINT CMOV:1;                 // 15
-      UINT PAT:1;                  // 16
-      UINT PSE36:1;                // 17
-      UINT Reserved5:1;            // 18
-      UINT CFLSH:1;                // 19
-      UINT Reserved2:3;            // 22..20
-      UINT MMX:1;                  // 23
-      UINT FXSR:1;                 // 24
-      UINT SSE:1;                  // 25
-      UINT SSE2:1;                 // 26
-      UINT Reserved4:1;            // 27
-      UINT HTT:1;                  // 28
-      UINT Reserved3:3;            // 31..29
-   } AMD;  // high order
-   UINT w;
+    struct { // low order
+        UINT FPU: 1;                 // 0
+        UINT VME: 1;                 // 1
+        UINT DE: 1;                  // 2
+        UINT PSE: 1;                 // 3
+        UINT MSR: 1;                 // 4
+        UINT TSC: 1;                 // 5
+        UINT PAE: 1;                 // 6
+        UINT MCE: 1;                 // 7
+        UINT CX8: 1;                 // 8
+        UINT APIC: 1;                // 9
+        UINT Reserved1: 1;           // 10
+        UINT SEP: 1;                 // 11
+        UINT MTRR: 1;                // 12
+        UINT PGE: 1;                 // 13
+        UINT MCA: 1;                 // 14
+        UINT CMOV: 1;                // 15
+        UINT PAT: 1;                 // 16
+        UINT PSE36: 1;               // 17
+        UINT PSN: 1;                 // 18
+        UINT CFLSH: 1;               // 19
+        UINT Reserved2: 1;           // 20
+        UINT DS: 1;                  // 21
+        UINT ACPI: 1;                // 22
+        UINT MMX: 1;                 // 23
+        UINT FXSR: 1;                // 24
+        UINT SSE: 1;                 // 25
+        UINT SSE2: 1;                // 26
+        UINT SS: 1;                  // 27
+        UINT HTT: 1;                 // 28
+        UINT TM: 1;                  // 29
+        UINT Reserved3: 1;           // 30
+        UINT PBE: 1;                 // 31
+    } Intel;  // high order
+    struct { // low order
+        UINT FPU: 1;                 // 0
+        UINT VME: 1;                 // 1
+        UINT DE: 1;                  // 2
+        UINT PSE: 1;                 // 3
+        UINT MSR: 1;                 // 4
+        UINT TSC: 1;                 // 5
+        UINT PAE: 1;                 // 6
+        UINT MCE: 1;                 // 7
+        UINT CX8: 1;                 // 8
+        UINT APIC: 1;                // 9
+        UINT Reserved1: 1;           // 10
+        UINT SEP: 1;                 // 11
+        UINT MTRR: 1;                // 12
+        UINT PGE: 1;                 // 13
+        UINT MCA: 1;                 // 14
+        UINT CMOV: 1;                // 15
+        UINT PAT: 1;                 // 16
+        UINT PSE36: 1;               // 17
+        UINT Reserved5: 1;           // 18
+        UINT CFLSH: 1;               // 19
+        UINT Reserved2: 3;           // 22..20
+        UINT MMX: 1;                 // 23
+        UINT FXSR: 1;                // 24
+        UINT SSE: 1;                 // 25
+        UINT SSE2: 1;                // 26
+        UINT Reserved4: 1;           // 27
+        UINT HTT: 1;                 // 28
+        UINT Reserved3: 3;           // 31..29
+    } AMD;  // high order
+    UINT w;
 } EDX1b;
 
 /*****************************************************************************
@@ -361,11 +361,11 @@ typedef union {
     IDS_CTLB_F0H            "64-byte prefetching"
     IDS_CTLB_F1H            "128-byte prefetching"
 
-*****************************************************************************/  
+*****************************************************************************/
 
 typedef union {
-   CPUregs regs;
-   BYTE descriptors[16];
+    CPUregs regs;
+    BYTE descriptors[16];
 } EREGS2;
 
 
@@ -377,7 +377,7 @@ typedef union {
   EDX: Processor Serial Number <63..32>
 
   Note that this is unsupported on all processors > Pentium III
-*****************************************************************************/  
+*****************************************************************************/
 
 /*****************************************************************************
   CPUID(4)
@@ -413,25 +413,25 @@ typedef union {
 *****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT CacheType:5;         //   4..0
-      UINT CacheLevel:3;        //   7..5
-      UINT SelfInitializing:1;  //      8
-      UINT FullyAssociative:1;  //      9
-      UINT Reserved:4;          // 13..10
-      UINT ThreadsSharing:12;   // 25..14
-      UINT CoresPerPackage:6;   // 31..26
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT CacheType: 5;        //   4..0
+        UINT CacheLevel: 3;       //   7..5
+        UINT SelfInitializing: 1; //      8
+        UINT FullyAssociative: 1; //      9
+        UINT Reserved: 4;         // 13..10
+        UINT ThreadsSharing: 12;  // 25..14
+        UINT CoresPerPackage: 6;  // 31..26
+    } bits;  // high order
+    UINT w;
 } EAX4b;
 
 typedef union {
-   struct { // low order
-      UINT SystemCoherencyLineSize:12;   // 11..0
-      UINT PhysicalLinePartitions:10;    // 21..12
-      UINT WaysOfAssociativity:10;       // 32..22
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT SystemCoherencyLineSize: 12;  // 11..0
+        UINT PhysicalLinePartitions: 10;   // 21..12
+        UINT WaysOfAssociativity: 10;      // 32..22
+    } bits;  // high order
+    UINT w;
 } EBX4b;
 
 
@@ -469,43 +469,43 @@ typedef union {
   Number of C2 sub C states supported using MWAIT
   Number of C3 sub C states supported using MWAIT
   Number of C4 sub C states supported using MWAIT
-*****************************************************************************/  
+*****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT SmallestMonitorLineSize:16;  // 15..0
-      UINT Reserved2:16;                // 31..16
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT SmallestMonitorLineSize: 16; // 15..0
+        UINT Reserved2: 16;               // 31..16
+    } bits;  // high order
+    UINT w;
 } EAX5b;
 
 typedef union {
-   struct { // low order
-      UINT LargestMonitorLineSize:16;   // 15..0
-      UINT Reserved1:16;                // 31..16
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT LargestMonitorLineSize: 16;  // 15..0
+        UINT Reserved1: 16;               // 31..16
+    } bits;  // high order
+    UINT w;
 } EBX5b;
 
 typedef union {
-   struct { // low order
-      UINT MWAITEnumerationSupported:1;  // 0
-      UINT InterruptsAsBreakEvents:1;    // 1
-      UINT Reserved3:30;                 // 31..2
-   } bits;
-   UINT w;
+    struct { // low order
+        UINT MWAITEnumerationSupported: 1; // 0
+        UINT InterruptsAsBreakEvents: 1;   // 1
+        UINT Reserved3: 30;                // 31..2
+    } bits;
+    UINT w;
 } ECX5b;
 
 typedef union {
-   struct { // low order
-      UINT C0:4;                        // 0..3
-      UINT C1:4;                        // 4..7
-      UINT C2:4;                        // 8..11
-      UINT C3:4;                        // 15..12
-      UINT C4:4;                        // 19..16
-      UINT Reserved4:12;                // 31..29
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT C0: 4;                       // 0..3
+        UINT C1: 4;                       // 4..7
+        UINT C2: 4;                       // 8..11
+        UINT C3: 4;                       // 15..12
+        UINT C4: 4;                       // 19..16
+        UINT Reserved4: 12;               // 31..29
+    } bits;  // high order
+    UINT w;
 } EDX5b;
 
 /*****************************************************************************
@@ -538,27 +538,27 @@ typedef union {
 
 *****************************************************************************/
 typedef union {
-   struct {                      // low order
-      UINT SensorSupported:1;    // 0
-      UINT Reserved1:31;         // 31..1
-   } bits;                       // high order
-   UINT w;
+    struct {                      // low order
+        UINT SensorSupported: 1;   // 0
+        UINT Reserved1: 31;        // 31..1
+    } bits;                       // high order
+    UINT w;
 } EAX6b;
 
 typedef union {
-   struct {                      // low order
-      UINT InterruptThresholds:4;// 3..0
-      UINT Reserved2:26;         // 31..4
-   } bits;                       // high order
-   UINT w;
+    struct {                      // low order
+        UINT InterruptThresholds: 4; // 3..0
+        UINT Reserved2: 26;        // 31..4
+    } bits;                       // high order
+    UINT w;
 } EBX6b;
 
 typedef union {
-   struct {                      // low order
-      UINT ACNT_MCNT:1;          // 0
-      UINT Reserved3:31;         // 31..1
-   } bits;                       // high order
-   UINT w;
+    struct {                      // low order
+        UINT ACNT_MCNT: 1;         // 0
+        UINT Reserved3: 31;        // 31..1
+    } bits;                       // high order
+    UINT w;
 } ECX6b;
 
 /*****************************************************************************
@@ -595,36 +595,36 @@ typedef union {
 *****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT VersionID:8;         // 7..0
-      UINT GPCounters:8;        // 15..8
-      UINT GPCounterWidth:8;    // 23..16
-      UINT EBXVectorLength:8;   // 31..24
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT VersionID: 8;        // 7..0
+        UINT GPCounters: 8;       // 15..8
+        UINT GPCounterWidth: 8;   // 23..16
+        UINT EBXVectorLength: 8;  // 31..24
+    } bits;  // high order
+    UINT w;
 } EAX10b;
 
 typedef union {
-   struct { // low order
-      UINT CoreCycleNA:1;            // 0
-      UINT InstructionRetiredNA:1;   // 1
-      UINT ReferenceCyclesNA:1;      // 2
-      UINT CacheReferenceNA:1;       // 3
-      UINT CacheMissNA:1;            // 4
-      UINT BranchRetiredNA:1;        // 5
-      UINT BranchMispredictNA:1;     // 6
-      UINT Reserved1:25;             // 31..7
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT CoreCycleNA: 1;           // 0
+        UINT InstructionRetiredNA: 1;  // 1
+        UINT ReferenceCyclesNA: 1;     // 2
+        UINT CacheReferenceNA: 1;      // 3
+        UINT CacheMissNA: 1;           // 4
+        UINT BranchRetiredNA: 1;       // 5
+        UINT BranchMispredictNA: 1;    // 6
+        UINT Reserved1: 25;            // 31..7
+    } bits;  // high order
+    UINT w;
 } EBX10b;
 
 typedef union {
-   struct { // low order
-      UINT FixedFunctionCounters:5;    // 4..0
-      UINT CounterBitWidth:8;          // 12..5
-      UINT Reserved2:19;               // 31..13
-   } bits;  // high order
-   UINT w;
+    struct { // low order
+        UINT FixedFunctionCounters: 5;   // 4..0
+        UINT CounterBitWidth: 8;         // 12..5
+        UINT Reserved2: 19;              // 31..13
+    } bits;  // high order
+    UINT w;
 } EDX10b;
 
 /*****************************************************************************
@@ -668,7 +668,7 @@ typedef union {
   LS- LAHF/SAHF Available (64 bit)
 
   ECX: AMD
-  
+
    31                                                  4  3  2  1  0
   +--------------------------------------------------+--+--+--+--+--+
   |##################################################|AM|##|SV|CL|LS|
@@ -677,7 +677,7 @@ typedef union {
   CL - CmpLegacy - Core Multiprocessor Legacy mode
   SV - SVM - Secure Virtual Machine
   AM - AltMovCR8 - LOCK MOV CR0 == MOV CR8
-  
+
 ==================================================================================
   EDX: (Intel)
    31 30 29 28                   21 20 19                   12 11 10                             0
@@ -721,78 +721,78 @@ typedef union {
 *****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT Reserved;          // 31..0
-   } Intel; // high order
-   struct { // low order
-      UINT BrandId:16;        // 15..0
-      UINT Reserved:16;       // 31..16
-   } AMD;
-   UINT w;
+    struct { // low order
+        UINT Reserved;          // 31..0
+    } Intel; // high order
+    struct { // low order
+        UINT BrandId: 16;       // 15..0
+        UINT Reserved: 16;      // 31..16
+    } AMD;
+    UINT w;
 } EBX1x;
 
 typedef union {
-   struct { // low order
-      UINT LAHF_SAHF:1;       // 0
-      UINT Reserved5:31;      // 31..1
-   } Intel;  // high order
-   struct { // low order
-      UINT LAHF_SAHF:1;       // 0
-      UINT CmpLegacy:1;       // 1
-      UINT SVM:1;             // 2
-      UINT Reserved6:1;       // 3
-      UINT AltMovCr8:1;       // 4
-      UINT Reserved5:26;      // 31..5
-   } AMD; // high order
-   UINT w;
+    struct { // low order
+        UINT LAHF_SAHF: 1;      // 0
+        UINT Reserved5: 31;     // 31..1
+    } Intel;  // high order
+    struct { // low order
+        UINT LAHF_SAHF: 1;      // 0
+        UINT CmpLegacy: 1;      // 1
+        UINT SVM: 1;            // 2
+        UINT Reserved6: 1;      // 3
+        UINT AltMovCr8: 1;      // 4
+        UINT Reserved5: 26;     // 31..5
+    } AMD; // high order
+    UINT w;
 } ECX1x;
 
 //=============================================================================
 typedef union {
-   struct {  // low order
-      UINT Reserved1:11;     // 0..10
-      UINT SYSCALL_SYSRET:1; // 11
-      UINT Reserved2:8;      // 19..12
-      UINT ExecuteDisable:1; // 20
-      UINT Reserved3:8;      // 28..21
-      UINT EMT64T:1;         // 29
-      UINT Reserved4:2;      // 30..31
-   } Intel;   // high order
+    struct {  // low order
+        UINT Reserved1: 11;    // 0..10
+        UINT SYSCALL_SYSRET: 1; // 11
+        UINT Reserved2: 8;     // 19..12
+        UINT ExecuteDisable: 1; // 20
+        UINT Reserved3: 8;     // 28..21
+        UINT EMT64T: 1;        // 29
+        UINT Reserved4: 2;     // 30..31
+    } Intel;   // high order
 
-   struct { // low order
-      UINT FPU:1;            // 0
-      UINT VME:1;            // 1
-      UINT DE:1;             // 2
-      UINT PSE:1;            // 3
-      UINT TSC:1;            // 4
-      UINT MSR:1;            // 5
-      UINT PAE:1;            // 6
-      UINT MCE:1;            // 7
-      UINT CMPXCHG8B:1;      // 8
-      UINT APIC:1;           // 9
-      UINT Reserved1:1;      // 10
-      UINT SYSCALL_SYSRET:1; // 11
-      UINT MTRR:1;           // 12
-      UINT PGE:1;            // 13
-      UINT MCA:1;            // 14
-      UINT CMOV:1;           // 15
-      UINT PAT:1;            // 16
-      UINT PSE36:1;          // 17
-      UINT Reserved2:2;      // 19..18
-      UINT ExecuteDisable:1; // 20
-      UINT Reserved3:1;      // 21
-      UINT MMXExt:1;         // 22
-      UINT MMX:1;            // 23
-      UINT FXSR:1;           // 24
-      UINT FFXSR:1;          // 25
-      UINT Reserved4:1;      // 26
-      UINT RDTSCP:1;         // 27
-      UINT Reserved5:1;      // 28
-      UINT LM:1;             // 29
-      UINT ThreeDNowExt:1;   // 30
-      UINT ThreeDNow:1;      // 31
-   } AMD;   // high order
-   UINT w;
+    struct { // low order
+        UINT FPU: 1;           // 0
+        UINT VME: 1;           // 1
+        UINT DE: 1;            // 2
+        UINT PSE: 1;           // 3
+        UINT TSC: 1;           // 4
+        UINT MSR: 1;           // 5
+        UINT PAE: 1;           // 6
+        UINT MCE: 1;           // 7
+        UINT CMPXCHG8B: 1;     // 8
+        UINT APIC: 1;          // 9
+        UINT Reserved1: 1;     // 10
+        UINT SYSCALL_SYSRET: 1; // 11
+        UINT MTRR: 1;          // 12
+        UINT PGE: 1;           // 13
+        UINT MCA: 1;           // 14
+        UINT CMOV: 1;          // 15
+        UINT PAT: 1;           // 16
+        UINT PSE36: 1;         // 17
+        UINT Reserved2: 2;     // 19..18
+        UINT ExecuteDisable: 1; // 20
+        UINT Reserved3: 1;     // 21
+        UINT MMXExt: 1;        // 22
+        UINT MMX: 1;           // 23
+        UINT FXSR: 1;          // 24
+        UINT FFXSR: 1;         // 25
+        UINT Reserved4: 1;     // 26
+        UINT RDTSCP: 1;        // 27
+        UINT Reserved5: 1;     // 28
+        UINT LM: 1;            // 29
+        UINT ThreeDNowExt: 1;  // 30
+        UINT ThreeDNow: 1;     // 31
+    } AMD;   // high order
+    UINT w;
 } EDX1x;
 
 /*****************************************************************************
@@ -802,13 +802,13 @@ typedef union {
 
   48 8-bit characters representing the brand string, terminated by a \0
   character in position 48
-  
+
                                          0x80000002  0x80000003 0x80000004
   EAX: Processor brand string characters       0..3      16..19     32..36
   EBX: Processor brand string characters       4..7      20..23     37..40
   ECX: Processor brand string characters      8..11      24..27     41..44
   EDX: Processor brand string characters     12..15      28..31     45..48
-  
+
 
   // 0x80000004:EDX will typically be (for Intel)
   \0zHM  "MHz"
@@ -856,58 +856,58 @@ typedef union {
              01 direct mapped
              02..FE n-way mapping
              FF fully associative
-    
+
 *****************************************************************************/
 typedef union { // 2M+4M page TLB info
-   struct { // low order
-      UINT Reserved:32;     // 31..0
-   } Intel;
-   struct { // low order
-      UINT InstCount:8;    // 7..0
-      UINT InstAssoc:8;    // 15..8
-      UINT DataCount:8;    // 23..16
-      UINT DataAssoc:8;    // 31..24
-   } AMD;
-   UINT w;
+    struct { // low order
+        UINT Reserved: 32;    // 31..0
+    } Intel;
+    struct { // low order
+        UINT InstCount: 8;   // 7..0
+        UINT InstAssoc: 8;   // 15..8
+        UINT DataCount: 8;   // 23..16
+        UINT DataAssoc: 8;   // 31..24
+    } AMD;
+    UINT w;
 } EAX5x;
 
 typedef union { // 4K page TLB info
-   struct { // low order
-      UINT Reserved:32;     // 31..0
-   } Intel;
-   struct { // low order
-      UINT InstCount:8;    // 7..0
-      UINT InstAssoc:8;    // 15..8
-      UINT DataCount:8;    // 23..16
-      UINT DataAssoc:8;    // 31..24
-   } AMD;
-   UINT w;
+    struct { // low order
+        UINT Reserved: 32;    // 31..0
+    } Intel;
+    struct { // low order
+        UINT InstCount: 8;   // 7..0
+        UINT InstAssoc: 8;   // 15..8
+        UINT DataCount: 8;   // 23..16
+        UINT DataAssoc: 8;   // 31..24
+    } AMD;
+    UINT w;
 } EBX5x;
 
 typedef union { // L1 data cache info
-   struct { // low order
-      UINT Reserved:32;     // 31..0
-   } Intel;
-   struct { // low order
-      UINT LineSize:8;     // 7..0
-      UINT LinesPerTag:8;  // 15..8
-      UINT Associativity:8;// 23..16
-      UINT CacheSize:8;    // 31..24
-   } AMD;
-   UINT w;
+    struct { // low order
+        UINT Reserved: 32;    // 31..0
+    } Intel;
+    struct { // low order
+        UINT LineSize: 8;    // 7..0
+        UINT LinesPerTag: 8; // 15..8
+        UINT Associativity: 8; // 23..16
+        UINT CacheSize: 8;   // 31..24
+    } AMD;
+    UINT w;
 } ECX5x;
 
 typedef union { // L1 instruction cache info
-   struct { // low order
-      UINT Reserved:32;     // 31..0
-   } Intel;
-   struct { // low order
-      UINT LineSize:8;     // 7..0
-      UINT LinesPerTag:8;  // 15..8
-      UINT Associativity:8;// 23..16
-      UINT CacheSize:8;    // 31..24
-   } AMD;
-   UINT w;
+    struct { // low order
+        UINT Reserved: 32;    // 31..0
+    } Intel;
+    struct { // low order
+        UINT LineSize: 8;    // 7..0
+        UINT LinesPerTag: 8; // 15..8
+        UINT Associativity: 8; // 23..16
+        UINT CacheSize: 8;   // 31..24
+    } AMD;
+    UINT w;
 } EDX5x;
 
 /*****************************************************************************
@@ -931,7 +931,7 @@ typedef union { // L1 instruction cache info
                                   IDS_L2_ASSOCIATIVITY_06H "8-way associative"
                                   IDS_L2_ASSOCIATIVITY_08H "16-way associative"
                                   IDS_L2_ASSOCIATIVITY_0FH "Fully associative"
-                                
+
    AMD:
   EAX:  L2 TLB parameters, 2M/4M pages
 
@@ -974,52 +974,52 @@ typedef union { // L1 instruction cache info
                                       IDS_L2_ASSOCIATIVITY_08H "16-way associative"
                                       IDS_L2_ASSOCIATIVITY_0FH "Fully associative"
    LPT - Lines Per Tag
-   
+
    EDX: Reserved
 *****************************************************************************/
 
 typedef union { // 2M and 4M TLB parameters
-   struct {
-      UINT Reserved:32;      // 31..0
-   } Intel;
+    struct {
+        UINT Reserved: 32;     // 31..0
+    } Intel;
 
-   struct { // low order
-      UINT InstCount:12;     // 11..0
-      UINT InstAssoc:4;      // 15..12
-      UINT DataCount:12;     // 27..16
-      UINT DataAssoc:4;      // 31..28
-   } AMD;   // high order
-   UINT w;
+    struct { // low order
+        UINT InstCount: 12;    // 11..0
+        UINT InstAssoc: 4;     // 15..12
+        UINT DataCount: 12;    // 27..16
+        UINT DataAssoc: 4;     // 31..28
+    } AMD;   // high order
+    UINT w;
 } EAX6x;
 
 typedef union { // 4K TLB parameters
-   struct {
-      UINT Reserved:32;      // 31..0
-   } Intel;
+    struct {
+        UINT Reserved: 32;     // 31..0
+    } Intel;
 
-   struct { // low order
-      UINT InstCount:12;     // 11..0
-      UINT InstAssoc:4;      // 15..12
-      UINT DataCount:12;     // 27..16
-      UINT DataAssoc:4;      // 31..28
-   } AMD;   // high order
-   UINT w;
+    struct { // low order
+        UINT InstCount: 12;    // 11..0
+        UINT InstAssoc: 4;     // 15..12
+        UINT DataCount: 12;    // 27..16
+        UINT DataAssoc: 4;     // 31..28
+    } AMD;   // high order
+    UINT w;
 } EBX6x;
 
 typedef union {
-   struct { // low order
-      UINT LineSize:8;        // 7..0
-      UINT Reserved1:4;       // 11..8
-      UINT Associativity:4;   // 15..12
-      UINT CacheSize:16;      // 31..16
-   } Intel; // high order
-   struct { // low order
-      UINT LineSize:8;        // 7..0
-      UINT LinesPerTag:4;     // 11.8
-      UINT Associativity:4;   // 15..12
-      UINT CacheSize:16;      // 31..16
-   } AMD;   // high order
-   UINT w;
+    struct { // low order
+        UINT LineSize: 8;       // 7..0
+        UINT Reserved1: 4;      // 11..8
+        UINT Associativity: 4;  // 15..12
+        UINT CacheSize: 16;     // 31..16
+    } Intel; // high order
+    struct { // low order
+        UINT LineSize: 8;       // 7..0
+        UINT LinesPerTag: 4;    // 11.8
+        UINT Associativity: 4;  // 15..12
+        UINT CacheSize: 16;     // 31..16
+    } AMD;   // high order
+    UINT w;
 } ECX6x;
 
 /*****************************************************************************
@@ -1037,7 +1037,7 @@ typedef union {
   EAX: Reserved
   EBX: Reserved
   ECX: Reserved
-  
+
    31                                           9  8 7  6  5  4  3  2  1  0
   +----------------------------------------------+--+----+--+--+--+--+--+--+
   |##############################################|TI|####|ST|TM|TT|VI|FI|TS|
@@ -1053,18 +1053,18 @@ typedef union {
 *****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT TS:1;           // 0
-      UINT FID:1;          // 1
-      UINT VID:1;          // 2
-      UINT TTP:1;          // 3
-      UINT TM:1;           // 4
-      UINT STC:1;          // 5
-      UINT Reserved1:2;    // 7..6
-      UINT TSCInvariant:1; // 8
-      UINT Reserved2:23;   // 31..9
-   } AMD;  // high order
-   UINT w;
+    struct { // low order
+        UINT TS: 1;          // 0
+        UINT FID: 1;         // 1
+        UINT VID: 1;         // 2
+        UINT TTP: 1;         // 3
+        UINT TM: 1;          // 4
+        UINT STC: 1;         // 5
+        UINT Reserved1: 2;   // 7..6
+        UINT TSCInvariant: 1; // 8
+        UINT Reserved2: 23;  // 31..9
+    } AMD;  // high order
+    UINT w;
 } EDX7x;
 
 /*****************************************************************************
@@ -1092,26 +1092,26 @@ typedef union {
       ActualCores = ECX.AMD.NC;
   else
       ActualCores = 1<<ECX.AMD.ApicIdCoreIdSize;
-      
-*****************************************************************************/  
+
+*****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT PhysicalAddressBits:8;   // 7..0
-      UINT VirtualAddressBits:8;    // 15..8
-      UINT Reserved:16;             // 31..16
-   } bits; // high order
-   UINT w;
+    struct { // low order
+        UINT PhysicalAddressBits: 8;  // 7..0
+        UINT VirtualAddressBits: 8;   // 15..8
+        UINT Reserved: 16;            // 31..16
+    } bits; // high order
+    UINT w;
 } EAX8x;
 
 typedef union {
-   struct { // low order
-      UINT NC:8;                // 7..0
-      UINT Reserved2:4;         // 11..8
-      UINT ApicIdCoreIdSize:4;  // 15..12
-      UINT Reserved3:16;        // 31..16
-   } AMD;   // high order
-   UINT w;
+    struct { // low order
+        UINT NC: 8;               // 7..0
+        UINT Reserved2: 4;        // 11..8
+        UINT ApicIdCoreIdSize: 4; // 15..12
+        UINT Reserved3: 16;       // 31..16
+    } AMD;   // high order
+    UINT w;
 } ECX8x;
 
 /*****************************************************************************
@@ -1128,13 +1128,13 @@ typedef union {
   ECX: Reserved
 
   EDX: Reserved
-  
-*****************************************************************************/  
+
+*****************************************************************************/
 
 typedef union {
-   struct { // low order
-      UINT SVMRev:8;     // 7..0
-      UINT Reserved:24;  // 31..8
-   } AMD;   // high order
-   UINT w;
+    struct { // low order
+        UINT SVMRev: 8;    // 7..0
+        UINT Reserved: 24; // 31..8
+    } AMD;   // high order
+    UINT w;
 } EAX10x;

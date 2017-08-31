@@ -14,7 +14,7 @@
 
 IMPLEMENT_DYNCREATE(CBasicCPU4_5, CBasicCPU4_0_31)
 CBasicCPU4_5::CBasicCPU4_5()
-        : CBasicCPU4_0_31()
+    : CBasicCPU4_0_31()
 {
 }
 
@@ -24,7 +24,7 @@ CBasicCPU4_5::~CBasicCPU4_5()
 
 void CBasicCPU4_5::DoDataExchange(CDataExchange* pDX)
 {
- CBasicCPU4_0_31::DoDataExchange(pDX);
+    CBasicCPU4_0_31::DoDataExchange(pDX);
 }
 
 
@@ -35,22 +35,21 @@ END_MESSAGE_MAP()
 // CBasicCPU4_5 message handlers
 
 BOOL CBasicCPU4_5::OnInitDialog()
-    {
-     CBasicCPU4_0_31::OnInitDialog();
-
-     return TRUE;  // return TRUE unless you set the focus to a control
-    }
+{
+    CBasicCPU4_0_31::OnInitDialog();
+    return TRUE;  // return TRUE unless you set the focus to a control
+}
 
 /****************************************************************************
 *                         CBasicCPU4_5::OnSetActive
 * Result: BOOL
-*       
-* Effect: 
+*
+* Effect:
 *       Reports the status
 ****************************************************************************/
 
 BOOL CBasicCPU4_5::OnSetActive()
-    {
-     ShowCacheParameters(5);
-     return CBasicCPU4_0_31::OnSetActive();
-    }
+{
+    ShowCacheParameters(5);
+    return CBasicCPU4_0_31::OnSetActive();
+}

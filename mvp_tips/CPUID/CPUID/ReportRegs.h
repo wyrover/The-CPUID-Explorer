@@ -9,8 +9,8 @@
 *       LPARAM: input value in EAX to CPUID
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
-*       Shows the EAX value 
+* Effect:
+*       Shows the EAX value
 ****************************************************************************/
 
 #define UWM_EAX_IN_MSG _T("UWM_EAX_IN-{D4B0824E-A936-49de-9C86-CC401C2E8D7D}")
@@ -23,7 +23,7 @@
 *       LPARAM: EBX value
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Updates the display of EAX and EBX
 ****************************************************************************/
 
@@ -36,7 +36,7 @@
 *       LPARAM: EDX value
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Updates the display of ECX and EDX
 ****************************************************************************/
 
@@ -50,14 +50,14 @@ DECLARE_MESSAGE(UWM_EAX_EBX)
 DECLARE_MESSAGE(UWM_ECX_EDX)
 
 #define REPORT_REGS(id, regs) \
-   {                                                              \
-    AfxGetMainWnd()->SendMessage(UWM_EAX_IN, 0, (LPARAM)id);      \
-    AfxGetMainWnd()->SendMessage(UWM_EAX_EBX, regs.EAX, regs.EBX);\
-    AfxGetMainWnd()->SendMessage(UWM_ECX_EDX, regs.ECX, regs.EDX);\
-   }
+    {                                                              \
+        AfxGetMainWnd()->SendMessage(UWM_EAX_IN, 0, (LPARAM)id);      \
+        AfxGetMainWnd()->SendMessage(UWM_EAX_EBX, regs.EAX, regs.EBX);\
+        AfxGetMainWnd()->SendMessage(UWM_ECX_EDX, regs.ECX, regs.EDX);\
+    }
 
 #define GetAndReport(id, regs)                        \
-   {                                                  \
-    CurrentProcessor.GetCPUID(id, &regs);             \
-    REPORT_REGS(id, regs);                            \
-   }
+    {                                                  \
+        CurrentProcessor.GetCPUID(id, &regs);             \
+        REPORT_REGS(id, regs);                            \
+    }

@@ -6,22 +6,22 @@
 
 class CBasicCPU1EAXAMD : public CBasicCPU1EAX
 {
-        DECLARE_DYNCREATE(CBasicCPU1EAXAMD)
+    DECLARE_DYNCREATE(CBasicCPU1EAXAMD)
 
 public:
-        CBasicCPU1EAXAMD();
-        virtual ~CBasicCPU1EAXAMD();
+    CBasicCPU1EAXAMD();
+    virtual ~CBasicCPU1EAXAMD();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_1_EAX_AMD };
+    enum { IDD = IDD_CPUID_BASIC_1_EAX_AMD };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnSetActive();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnSetActive();
 public:
-   virtual BOOL OnInitDialog();
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     CBits c_Reserved_15_12;
     CBits x_Reserved_15_12;
 };

@@ -7,20 +7,20 @@
 
 class CExtendedCPU1AMD : public CLeaves
 {
-        DECLARE_DYNCREATE(CExtendedCPU1AMD)
+    DECLARE_DYNCREATE(CExtendedCPU1AMD)
 
 public:
-        CExtendedCPU1AMD();
-        virtual ~CExtendedCPU1AMD();
+    CExtendedCPU1AMD();
+    virtual ~CExtendedCPU1AMD();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_EXTENDED_1_AMD };
+    enum { IDD = IDD_CPUID_EXTENDED_1_AMD };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

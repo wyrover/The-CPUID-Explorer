@@ -18,8 +18,7 @@
 
 class CTabImageList;
 
-typedef struct
-   {
+typedef struct {
     WORD dlgVer;
     WORD signature;
     DWORD helpID;
@@ -30,7 +29,7 @@ typedef struct
     short y;
     short cx;
     short cy;
-   } DLGTEMPLATEEX;
+} DLGTEMPLATEEX;
 
 #pragma pack (pop)
 //#endif // _DEBUG
@@ -43,7 +42,7 @@ typedef struct
 *       LPARAM: (LPARAM)(HWND) the window sending the message
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Queries the parent so the window will not stretch into the parent
 *       area
 ****************************************************************************/
@@ -54,71 +53,77 @@ typedef struct
 // CTabView declaration
 
 class CTabView : public /* CCtrlView */ CTabCtrl
-   {
-   DECLARE_DYNCREATE (CTabView)
+{
+    DECLARE_DYNCREATE(CTabView)
 
-    public:
-      CTabView();
-      virtual ~CTabView();
+public:
+    CTabView();
+    virtual ~CTabView();
 
-      CTabCtrl& GetTabCtrl () const { return *(CTabCtrl*) this; }
+    CTabCtrl& GetTabCtrl() const
+    {
+        return *(CTabCtrl*) this;
+    }
 
-      INT_PTR AddPage (LPCTSTR pszTitle, int nPageID, LPCTSTR pszTemplateName, CRuntimeClass * rtc);// REQ #001
-      INT_PTR AddPage (LPCTSTR pszTitle, int nPageID, int nTemplateID, CRuntimeClass * rtc); // REQ #001
-      INT_PTR AddPage (UINT title, int nPageID, int nTemplateID, CRuntimeClass * rtc); // REQ #001
+    INT_PTR AddPage(LPCTSTR pszTitle, int nPageID, LPCTSTR pszTemplateName, CRuntimeClass * rtc); // REQ #001
+    INT_PTR AddPage(LPCTSTR pszTitle, int nPageID, int nTemplateID, CRuntimeClass * rtc);  // REQ #001
+    INT_PTR AddPage(UINT title, int nPageID, int nTemplateID, CRuntimeClass * rtc);  // REQ #001
 
-      BOOL RemovePage (INT_PTR nIndex);                             // REQ #001
-      INT_PTR GetPageCount ();                                      // REQ #001
+    BOOL RemovePage(INT_PTR nIndex);                              // REQ #001
+    INT_PTR GetPageCount();                                       // REQ #001
 
-      BOOL GetPageTitle (INT_PTR nIndex, CString& strTitle);        // REQ #001
-      BOOL GetPageTitle(CWnd * wnd, CString & title);
-      BOOL SetPageTitle (INT_PTR nIndex, LPCTSTR pszTitle);         // REQ #001
+    BOOL GetPageTitle(INT_PTR nIndex, CString& strTitle);         // REQ #001
+    BOOL GetPageTitle(CWnd * wnd, CString & title);
+    BOOL SetPageTitle(INT_PTR nIndex, LPCTSTR pszTitle);          // REQ #001
 
-      int GetPageID (INT_PTR nIndex);                               // REQ #001
-      int SetPageID (INT_PTR nIndex, int nPageID);                  // REQ #001
+    int GetPageID(INT_PTR nIndex);                                // REQ #001
+    int SetPageID(INT_PTR nIndex, int nPageID);                   // REQ #001
 
-      BOOL ActivatePage (INT_PTR nIndex);                           // REQ #001
-      INT_PTR GetActivePage ();                                     // REQ #001
-      CWnd* GetPage (INT_PTR nIndex);                               // REQ #001
+    BOOL ActivatePage(INT_PTR nIndex);                            // REQ #001
+    INT_PTR GetActivePage();                                      // REQ #001
+    CWnd* GetPage(INT_PTR nIndex);                                // REQ #001
 
-      INT_PTR GetPageIndex (int nPageID);                           // REQ #001
-      void GetOriginalWindowSize(CRect & r) { r = OriginalWindowSize; }
-      INT_PTR GetIndex(CWnd * wnd);                                 // REQ #001
+    INT_PTR GetPageIndex(int nPageID);                            // REQ #001
+    void GetOriginalWindowSize(CRect & r)
+    {
+        r = OriginalWindowSize;
+    }
+    INT_PTR GetIndex(CWnd * wnd);                                 // REQ #001
 
-    protected: // Data
-       CTypedPtrArray<CObArray, CDialog*> m_pPages;
-       CArray<HWND, HWND> m_hFocusWnd;
-       CArray<int, int> m_nPageIDs;
-       HCURSOR LeftCursor;
-    protected: // Virtual methods
-       virtual BOOL PreCreateWindow (CREATESTRUCT& cs);
-       virtual BOOL OnInitPage (INT_PTR nIndex, int nPageID);       // REQ #001
-       virtual void OnActivatePage (INT_PTR nIndex, int nPageID);   // REQ #001
-       virtual void OnDeactivatePage (INT_PTR nIndex, int nPageID); // REQ #001
-       virtual void OnDestroyPage (INT_PTR nIndex, int nPageID);    // REQ #001
-    protected: // Data
-       CRect OriginalWindowSize;
-    protected: // Methods
+protected: // Data
+    CTypedPtrArray<CObArray, CDialog*> m_pPages;
+    CArray<HWND, HWND> m_hFocusWnd;
+    CArray<int, int> m_nPageIDs;
+    HCURSOR LeftCursor;
+protected: // Virtual methods
+    virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+    virtual BOOL OnInitPage(INT_PTR nIndex, int nPageID);        // REQ #001
+    virtual void OnActivatePage(INT_PTR nIndex, int nPageID);    // REQ #001
+    virtual void OnDeactivatePage(INT_PTR nIndex, int nPageID);  // REQ #001
+    virtual void OnDestroyPage(INT_PTR nIndex, int nPageID);     // REQ #001
+protected: // Data
+    CRect OriginalWindowSize;
+protected: // Methods
 #ifdef _DEBUG
-       BOOL CheckDialogTemplate (LPCTSTR pszTemplateName);
+    BOOL CheckDialogTemplate(LPCTSTR pszTemplateName);
 #endif // _DEBUG
-       DWORD GetDialogStyle( LPCTSTR pszTemplateName);
-       void ResizeDialog (INT_PTR nIndex, int cx, int cy);          // REQ #001
+    DWORD GetDialogStyle(LPCTSTR pszTemplateName);
+    void ResizeDialog(INT_PTR nIndex, int cx, int cy);           // REQ #001
 
-        //{{AFX_MSG(CTabView)
-       afx_msg void OnSize (UINT nType, int cx, int cy);
-       afx_msg void OnDestroy ();
-       afx_msg void OnSetFocus (CWnd* pOldWnd);
-       afx_msg void OnKillFocus (CWnd* pNewWnd);
-       afx_msg UINT OnNcHitTest(CPoint point);
-       afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
-       afx_msg void OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI);
-        //}}AFX_MSG
-       afx_msg void OnSelChanging (NMHDR* pNMHDR, LRESULT* pResult);
-       afx_msg void OnSelChange (NMHDR* pNMHDR, LRESULT* pResult);
+    //{{AFX_MSG(CTabView)
+    afx_msg void OnSize(UINT nType, int cx, int cy);
+    afx_msg void OnDestroy();
+    afx_msg void OnSetFocus(CWnd* pOldWnd);
+    afx_msg void OnKillFocus(CWnd* pNewWnd);
+    afx_msg LRESULT OnNcHitTest(CPoint point);
+    afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
+    afx_msg void OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI);
+    //}}AFX_MSG
+    afx_msg void OnSelChanging(NMHDR* pNMHDR, LRESULT* pResult);
+    afx_msg void OnSelChange(NMHDR* pNMHDR, LRESULT* pResult);
 
-       DECLARE_MESSAGE_MAP()
-   };
+    DECLARE_MESSAGE_MAP()
+};
 
 
 /****************************************************************************
@@ -128,7 +133,7 @@ class CTabView : public /* CCtrlView */ CTabCtrl
 *       LPARAM: (LPARAM)(int)cy: New height of control
 * Result: LRESULT
 *       Logically void, 0, always
-* Effect: 
+* Effect:
 *       Notifies the parent that the dialog has resized
 ****************************************************************************/
 

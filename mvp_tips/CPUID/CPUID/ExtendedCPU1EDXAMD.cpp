@@ -20,21 +20,21 @@
 IMPLEMENT_DYNCREATE(CExtendedCPU1EDXAMD, CScrollableCaptionsParent)
 
 CExtendedCPU1EDXAMD::CExtendedCPU1EDXAMD()
-        : CScrollableCaptionsParent(CExtendedCPU1EDXAMD::IDD)
-   {
-   }
+    : CScrollableCaptionsParent(CExtendedCPU1EDXAMD::IDD)
+{
+}
 
 CExtendedCPU1EDXAMD::~CExtendedCPU1EDXAMD()
-   {
-   }
+{
+}
 
 /****************************************************************************
 *                     CExtendedCPU1ECXAMD::DoDataExchange
 * Inputs:
 *       CDataExchange * pDX:
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Binds controls to variables
 ****************************************************************************/
 
@@ -88,21 +88,18 @@ END_MESSAGE_MAP()
 /****************************************************************************
 *                         CExtendedCPU1EDXAMD::OnSetActive
 * Result: BOOL
-*       
-* Effect: 
+*
+* Effect:
 *       Reports the registers
 ****************************************************************************/
 
 BOOL CExtendedCPU1EDXAMD::OnSetActive()
-   {
+{
     CPUregs regs;
     GetAndReport(0x80000001, regs);
-
     CString s;
-
     EDX1x EDX;
     EDX.w = regs.EDX;
-    
     SETWINDOWBIT(FPU, EDX, AMD);                // 0
     SETWINDOWBIT(VME, EDX, AMD);                // 1
     SETWINDOWBIT(DE, EDX, AMD);                 // 2
@@ -135,27 +132,23 @@ BOOL CExtendedCPU1EDXAMD::OnSetActive()
     SETWINDOWBIT(LM, EDX, AMD);                 // 29
     SETWINDOWBIT(ThreeDNowExt, EDX, AMD);       // 30
     SETWINDOWBIT(ThreeDNow, EDX, AMD);          // 31
-
     return CScrollableCaptionsParent::OnSetActive();
-   }
+}
 
 /****************************************************************************
 *                         CExtendedCPU1EDXAMD::OnInitDialog
 * Result: BOOL
 *       TRUE, always
-* Effect: 
+* Effect:
 *       Initializes the dialog
 ****************************************************************************/
 
 BOOL CExtendedCPU1EDXAMD::OnInitDialog()
-   {
+{
     CScrollableCaptionsParent::OnInitDialog();
-
     ColorSet colors(TRUE);
-
     POSITION p;
     p = colors.GetFirstColorPosition();
-
     SETCOLORIc(FPU, 0);                 // 0
     SETCOLORIc(VME, 1);                 // 1
     SETCOLORIc(DE,  2);                 // 2
@@ -187,8 +180,7 @@ BOOL CExtendedCPU1EDXAMD::OnInitDialog()
     SETCOLORIc(LM, 29);                 // 29
     SETCOLORIc(ThreeDNowExt, 30);       // 30
     SETCOLORIc(ThreeDNow, 31);          // 31
-
     CreateScroller(RUNTIME_CLASS(CExtendedCPU1EDXCaptionsAMD), CExtendedCPU1EDXCaptionsAMD::IDD);
     return TRUE;  // return TRUE unless you set the focus to a control
-                  // EXCEPTION: OCX Property Pages should return FALSE
-   }
+    // EXCEPTION: OCX Property Pages should return FALSE
+}

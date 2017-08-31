@@ -7,19 +7,19 @@
 
 class CBasicCPU1EDXIntel : public CBasicCPU1EDX
 {
-        DECLARE_DYNCREATE(CBasicCPU1EDXIntel)
+    DECLARE_DYNCREATE(CBasicCPU1EDXIntel)
 
 public:
-        CBasicCPU1EDXIntel();
-        virtual ~CBasicCPU1EDXIntel();
+    CBasicCPU1EDXIntel();
+    virtual ~CBasicCPU1EDXIntel();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_1_EDX_INTEL };
+    enum { IDD = IDD_CPUID_BASIC_1_EDX_INTEL };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     virtual BOOL OnInitDialog();
     virtual BOOL OnSetActive();
 protected:

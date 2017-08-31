@@ -6,20 +6,20 @@
 
 class CBasicCPU0 : public CLeaves
 {
-        DECLARE_DYNCREATE(CBasicCPU0)
+    DECLARE_DYNCREATE(CBasicCPU0)
 
 public:
-        CBasicCPU0();
-        virtual ~CBasicCPU0();
+    CBasicCPU0();
+    virtual ~CBasicCPU0();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_0 };
+    enum { IDD = IDD_CPUID_BASIC_0 };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-        virtual BOOL OnInitDialog();
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual BOOL OnInitDialog();
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 public:
     virtual BOOL OnSetActive();
 protected:

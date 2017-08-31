@@ -11,7 +11,7 @@
 
 IMPLEMENT_DYNCREATE(CExtendedCPU3, CExtendedCPU24)
 CExtendedCPU3::CExtendedCPU3()
-        : CExtendedCPU24()
+    : CExtendedCPU24()
 {
 }
 
@@ -21,7 +21,7 @@ CExtendedCPU3::~CExtendedCPU3()
 
 void CExtendedCPU3::DoDataExchange(CDataExchange* pDX)
 {
- CExtendedCPU24::DoDataExchange(pDX);
+    CExtendedCPU24::DoDataExchange(pDX);
 }
 
 
@@ -32,23 +32,22 @@ END_MESSAGE_MAP()
 // CExtendedCPU3 message handlers
 
 BOOL CExtendedCPU3::OnSetActive()
-   {
+{
     ShowExtendedCPU(0x80000003);
     return CExtendedCPU24::OnSetActive();
-   }
+}
 
 /****************************************************************************
 *                         CExtendedCPU3::OnInitDialog
 * Result: BOOL
 *       TRUE, always
-* Effect: 
+* Effect:
 *       Initializes the dialog
 ****************************************************************************/
 
 BOOL CExtendedCPU3::OnInitDialog()
-   {
+{
     CExtendedCPU24::OnInitDialog();
-
     return TRUE;  // return TRUE unless you set the focus to a control
-                  // EXCEPTION: OCX Property Pages should return FALSE
-   }
+    // EXCEPTION: OCX Property Pages should return FALSE
+}

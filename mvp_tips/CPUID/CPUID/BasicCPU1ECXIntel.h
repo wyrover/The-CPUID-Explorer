@@ -6,19 +6,19 @@
 
 class CBasicCPU1ECXIntel : public CBasicCPU1ECX
 {
-        DECLARE_DYNCREATE(CBasicCPU1ECXIntel)
+    DECLARE_DYNCREATE(CBasicCPU1ECXIntel)
 
 public:
-        CBasicCPU1ECXIntel();
-        virtual ~CBasicCPU1ECXIntel();
+    CBasicCPU1ECXIntel();
+    virtual ~CBasicCPU1ECXIntel();
 
 // Dialog Data
-        enum { IDD = IDD_CPUID_BASIC_1_ECX_INTEL };
+    enum { IDD = IDD_CPUID_BASIC_1_ECX_INTEL };
 
 protected:
-        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
-        DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
     virtual BOOL OnInitDialog();
 protected:
     CBits c_MWAIT;

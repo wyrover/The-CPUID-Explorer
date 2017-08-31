@@ -20,30 +20,30 @@ IMPLEMENT_DYNCREATE(CScrollableCaptionsParent, CLeaves)
 DECLARE_MESSAGE(UWM_QUERY_COORDINATES)
 
 CScrollableCaptionsParent::CScrollableCaptionsParent(UINT idd)
-        : CLeaves(idd)
-   {
+    : CLeaves(idd)
+{
     c_Captions = NULL;
-   }
+}
 
 CScrollableCaptionsParent::~CScrollableCaptionsParent()
-   {
+{
     delete c_Captions;
-   }
+}
 
 /****************************************************************************
 *                        CScrollableCaptionsParent::DoDataExchange
 * Inputs:
 *       CDataExchange * pDX:
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Maps controls to variables
 ****************************************************************************/
 
 void CScrollableCaptionsParent::DoDataExchange(CDataExchange* pDX)
 {
- CLeaves::DoDataExchange(pDX);
- DDX_Control(pDX, IDC_CHILD_FRAME, c_ChildFrame);
+    CLeaves::DoDataExchange(pDX);
+    DDX_Control(pDX, IDC_CHILD_FRAME, c_ChildFrame);
 }
 
 
@@ -66,51 +66,52 @@ END_MESSAGE_MAP()
 * Result: BOOL
 *       TRUE if successful
 *       FALSE if error
-* Effect: 
+* Effect:
 *       Creates a CScrollableCaptions subclass in the scroll area
 ****************************************************************************/
 
 BOOL CScrollableCaptionsParent::CreateScroller(CRuntimeClass * rtc, UINT idd)
-    {
-     c_Captions = (CScrollableCaptions*)rtc->CreateObject();
-     if(c_Captions == NULL)
-        { /* failed */
-         ASSERT(FALSE);
+{
+    c_Captions = (CScrollableCaptions*)rtc->CreateObject();
+
+    if (c_Captions == NULL) {
+        /* failed */
+        ASSERT(FALSE);
+    } /* failed */
+    else {
+        /* created captions object */
+        if (!c_Captions->Create(idd, this)) {
+            /* failed */
+            ASSERT(FALSE);
         } /* failed */
-     else
-        { /* created captions object */
-         if(!c_Captions->Create(idd, this))
-            { /* failed */
-             ASSERT(FALSE);
-            } /* failed */
-         else
-            { /* created dialog */
-             c_Captions->SetParent(this);
-             CRect rect;
-             c_ChildFrame.GetWindowRect(&rect);
-             ScreenToClient(&rect);
-             c_Captions->SetWindowPos(NULL, rect.left, rect.top, rect.Width(), rect.Height(), SWP_NOZORDER);
-             c_Captions->SetWindowPos(&c_ChildFrame, 0,0,0,0,SWP_NOMOVE | SWP_NOSIZE);
-             c_Captions->ShowWindow(SW_SHOW);
-            } /* created dialog */
-        } /* created captions object */
-     return TRUE;
-    } // CScrollableCaptionsParent::CreateScroller
+        else {
+            /* created dialog */
+            c_Captions->SetParent(this);
+            CRect rect;
+            c_ChildFrame.GetWindowRect(&rect);
+            ScreenToClient(&rect);
+            c_Captions->SetWindowPos(NULL, rect.left, rect.top, rect.Width(), rect.Height(), SWP_NOZORDER);
+            c_Captions->SetWindowPos(&c_ChildFrame, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+            c_Captions->ShowWindow(SW_SHOW);
+        } /* created dialog */
+    } /* created captions object */
+
+    return TRUE;
+} // CScrollableCaptionsParent::CreateScroller
 
 /****************************************************************************
 *                         CScrollableCaptionsParent::OnInitDialog
 * Result: BOOL
 *       TRUE, always
-* Effect: 
+* Effect:
 *       Initializes the dialog
 ****************************************************************************/
 
 BOOL CScrollableCaptionsParent::OnInitDialog()
-    {
-     CLeaves::OnInitDialog();
-
-     return TRUE;  // return TRUE unless you set the focus to a control
-    }
+{
+    CLeaves::OnInitDialog();
+    return TRUE;  // return TRUE unless you set the focus to a control
+}
 
 /****************************************************************************
 *                            CScrollableCaptionsParent::OnSize
@@ -119,17 +120,17 @@ BOOL CScrollableCaptionsParent::OnInitDialog()
 *       int cx: New client width
 *       int cy: New client height
 * Result: void
-*       
-* Effect: 
+*
+* Effect:
 *       Resizes the controls
 ****************************************************************************/
 
 void CScrollableCaptionsParent::OnSize(UINT nType, int cx, int cy)
-   {
+{
     CLeaves::OnSize(nType, cx, cy);
 
-    if(c_Captions->GetSafeHwnd() != NULL)
-       { /* resize caption */
+    if (c_Captions->GetSafeHwnd() != NULL) {
+        /* resize caption */
         CRect r;
         c_Captions->GetWindowRect(&r);
         ScreenToClient(&r);
@@ -137,8 +138,8 @@ void CScrollableCaptionsParent::OnSize(UINT nType, int cx, int cy)
                                  cx,
                                  cy - r.top,
                                  SWP_NOMOVE | SWP_NOZORDER);
-       } /* resize caption */
-   }
+    } /* resize caption */
+}
 
 /****************************************************************************
 *                      CScrollableCaptionsParent::OnQueryCoordinates
@@ -148,19 +149,19 @@ void CScrollableCaptionsParent::OnSize(UINT nType, int cx, int cy)
 * Result: (LRESULT)BOOL
 *       TRUE if successful
 *       FALSE if error
-* Effect: 
+* Effect:
 *       Fetches the window coordinates of the control
 ****************************************************************************/
 
 LRESULT CScrollableCaptionsParent::OnQueryCoordinates(WPARAM wParam, LPARAM lParam)
-    {
-     CRect * r = (CRect *)lParam;
+{
+    CRect * r = (CRect *)lParam;
+    CWnd * wnd = GetDlgItem((int)wParam);  // my GetDlgItem for 2007
+    ASSERT(wnd != NULL);
 
-     CWnd * wnd = GetDlgItem((int)wParam);  // my GetDlgItem for 2007
-     ASSERT(wnd != NULL);
-     if(wnd == NULL)
+    if (wnd == NULL)
         return (LRESULT)FALSE;
 
-     wnd->GetWindowRect(r);
-     return (LRESULT)TRUE;
-    } // CScrollableCaptionsParent::OnQueryCoordinates
+    wnd->GetWindowRect(r);
+    return (LRESULT)TRUE;
+} // CScrollableCaptionsParent::OnQueryCoordinates

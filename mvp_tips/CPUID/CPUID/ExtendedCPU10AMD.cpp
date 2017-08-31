@@ -16,7 +16,7 @@
 
 IMPLEMENT_DYNCREATE(CExtendedCPU10AMD, CLeaves)
 CExtendedCPU10AMD::CExtendedCPU10AMD()
-        : CLeaves(CExtendedCPU10AMD::IDD)
+    : CLeaves(CExtendedCPU10AMD::IDD)
 {
 }
 
@@ -26,10 +26,10 @@ CExtendedCPU10AMD::~CExtendedCPU10AMD()
 
 void CExtendedCPU10AMD::DoDataExchange(CDataExchange* pDX)
 {
-CLeaves::DoDataExchange(pDX);
-DDX_Control(pDX, IDC_EBX, c_EBX);
-DDX_Control(pDX, IDC_ECX, c_ECX);
-DDX_Control(pDX, IDC_EDX, c_EDX);
+    CLeaves::DoDataExchange(pDX);
+    DDX_Control(pDX, IDC_EBX, c_EBX);
+    DDX_Control(pDX, IDC_ECX, c_ECX);
+    DDX_Control(pDX, IDC_EDX, c_EDX);
 }
 
 
@@ -41,41 +41,35 @@ END_MESSAGE_MAP()
 /****************************************************************************
 *                         CExtendedCPU10AMD::OnSetActive
 * Result: BOOL
-*       
-* Effect: 
+*
+* Effect:
 *       Reports the registers
 ****************************************************************************/
 
 BOOL CExtendedCPU10AMD::OnSetActive()
-   {
+{
     CPUregs regs;
     GetAndReport(0x8000000A, regs);
-
-
     return CLeaves::OnSetActive();
-   }
+}
 
 /****************************************************************************
 *                         CExtendedCPU10AMD::OnInitDialog
 * Result: BOOL
 *       TRUE, always
-* Effect: 
+* Effect:
 *       Initializes the dialog
 ****************************************************************************/
 
 BOOL CExtendedCPU10AMD::OnInitDialog()
-   {
+{
     CLeaves::OnInitDialog();
-
     ColorSet colors(TRUE);
-
     POSITION p;
     p = colors.GetFirstColorPosition();
-
     SetFixedFont(c_EBX);
     SetFixedFont(c_ECX);
     SetFixedFont(c_EDX);
-
     return TRUE;  // return TRUE unless you set the focus to a control
-                  // EXCEPTION: OCX Property Pages should return FALSE
-   }
+    // EXCEPTION: OCX Property Pages should return FALSE
+}
